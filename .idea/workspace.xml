@@ -20,18 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Learning">
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env_example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/servers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejs/features.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejs/index.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejs/partials/head.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejs/partials/navbar.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/middlewares.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/adminController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/bookingController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/busController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/searchController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/seedUserController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tripController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/usersController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/dbConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/dbQuery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/pool.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/test/dbConnection.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/test/pool.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/seed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/status.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/tripStatus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/validations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyAuth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/adminRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/bookingRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/busRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/seedRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/tripRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/usersRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +104,9 @@
       <workItem from="1613758502740" duration="9888000" />
       <workItem from="1613842381173" duration="3116000" />
       <workItem from="1613911727153" duration="4098000" />
+      <workItem from="1613930887198" duration="167000" />
+      <workItem from="1613936726192" duration="3000" />
+      <workItem from="1614010207305" duration="3378000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -93,11 +115,21 @@
       <option name="project" value="LOCAL" />
       <updated>1613848930034</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Learning">
+      <created>1613931014479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613931014479</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -132,22 +164,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1613922407718">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614010502747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613922407718" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1613922407717">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614010502747" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614010502747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613922407717" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1613922407717">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614010502747" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614010502746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613922407717" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1613922407718">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614010502746" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614010502747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613922407718" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614010502747" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613761555168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
