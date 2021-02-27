@@ -21,7 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Learning">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/champion2030/PharmacyProject" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1oi9NGavtIFmhtgtHx5AvsmKlkM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -60,6 +68,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
@@ -80,7 +91,9 @@
       <workItem from="1613936726192" duration="3000" />
       <workItem from="1614010207305" duration="3410000" />
       <workItem from="1614076233157" duration="14728000" />
-      <workItem from="1614113073984" duration="596000" />
+      <workItem from="1614113073984" duration="1233000" />
+      <workItem from="1614434986432" duration="28000" />
+      <workItem from="1614454778709" duration="10008000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -103,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614024337873</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Learning">
+      <created>1614113944758</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1614113944758</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,14 +149,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Learning" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613762004522">
+    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614462909170">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613762004522" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613920494311">
+    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614462909170" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614458352309">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613920494311" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614458352309" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1613767741192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,6 +181,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614024357165" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1614465223819">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614465223819" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465092528" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613761555168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
