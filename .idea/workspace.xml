@@ -19,10 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Learning">
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Authentication and Authorization with JWT">
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/bin_www.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/usersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/usersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/tripStatus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/validations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyAuth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/usersRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/usersRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PharmacyFront/pharmacy" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -75,6 +83,28 @@
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="npm" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -93,7 +123,8 @@
       <workItem from="1614076233157" duration="14728000" />
       <workItem from="1614113073984" duration="1233000" />
       <workItem from="1614434986432" duration="28000" />
-      <workItem from="1614454778709" duration="10008000" />
+      <workItem from="1614454778709" duration="10206000" />
+      <workItem from="1614505756463" duration="9545000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -123,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614113944758</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Authentication and Authorization with JWT">
+      <created>1614465547711</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1614465547711</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,17 +184,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Learning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Learning" />
+    <MESSAGE value="Authentication and Authorization with JWT" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authentication and Authorization with JWT" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614462909170">
+    <state x="414" y="175" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614530513563">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614462909170" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614458352309">
+    <state x="414" y="175" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614530513563" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614529613294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614458352309" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614529613294" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1613767741192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -165,22 +204,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614024357165">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1614542987042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614024357165" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614024357165">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614542987042" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1614542987042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614024357165" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614024357165">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614542987042" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1614542987042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614024357165" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614024357165">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614542987042" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1614542987042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614024357165" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614542987042" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,15 +1,15 @@
 import dbQuery from '../db/dev/dbQuery.js';
 
 import {
-    hashPassword,
     comparePassword,
+    generateUserToken,
+    hashPassword,
+    isEmpty,
+    isValidEmail,
     validatePassword,
-    generateUserToken, isEmpty,
 } from '../helpers/validations.js';
 
-import {
-    errorMessage, successMessage, status,
-} from '../helpers/status.js';
+import {errorMessage, status, successMessage,} from '../helpers/status.js';
 
 /**
  * Create A User
@@ -19,25 +19,29 @@ import {
  */
 const createUser = async (req, res) => {
     const {
-        userName, password,
+        userName, email, password,
     } = req.body;
 
-    if (isEmpty(userName) || isEmpty(password)) {
-        errorMessage.error = 'Password, userName field cannot be empty';
+    if (isEmpty(userName) || isEmpty(password) || isEmpty(email)) {
+        errorMessage.error = 'Password, userName, email field cannot be empty';
         return res.status(status.bad).send(errorMessage);
     }
-
+    if (!isValidEmail(email)) {
+        errorMessage.error = 'Please enter a valid Email';
+        return res.status(status.bad).send(errorMessage);
+    }
     if (!validatePassword(password)) {
-        errorMessage.error = 'Password must be more than five(5) characters';
+        errorMessage.error = 'Password must be more than six(6) characters';
         return res.status(status.bad).send(errorMessage);
     }
     const hashedPassword = hashPassword(password);
     const createUserQuery = `INSERT INTO
-      users(userName, password)
-      VALUES($1, $2)
+      users(userName, email, password)
+      VALUES($1, $2, $3)
       returning *`;
     const values = [
         userName,
+        email,
         hashedPassword,
     ];
 
@@ -45,7 +49,7 @@ const createUser = async (req, res) => {
         const {rows} = await dbQuery.query(createUserQuery, values);
         const dbResponse = rows[0];
         delete dbResponse.password;
-        const token = generateUserToken(dbResponse.id, dbResponse.username);
+        const token = generateUserToken(dbResponse.id, dbResponse.username, dbResponse.email);
         successMessage.data = dbResponse;
         successMessage.data.token = token;
         return res.status(status.created).send(successMessage);
@@ -87,7 +91,7 @@ const siginUser = async (req, res) => {
             errorMessage.error = 'The password you provided is incorrect';
             return res.status(status.bad).send(errorMessage);
         }
-        const token = generateUserToken(dbResponse.id, dbResponse.userName);
+        const token = generateUserToken(dbResponse.id, dbResponse.userName, dbResponse.email);
         delete dbResponse.password;
         successMessage.data = dbResponse;
         successMessage.data.token = token;
@@ -98,8 +102,17 @@ const siginUser = async (req, res) => {
     }
 };
 
+const getUsers = async (req, res) => {
+    const signinUserQuery = 'SELECT * FROM users';
+    successMessage.data = await dbQuery.query(signinUserQuery)
+    return res.status(status.success).send(successMessage)
+
+
+};
+
 
 export {
     createUser,
     siginUser,
+    getUsers
 };

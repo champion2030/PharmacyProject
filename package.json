@@ -1,35 +1,46 @@
 {
   "name": "pharmacy",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "main": "env.js",
+  "type": "module",
   "scripts": {
-    "create-dev-tables": "babel-node ./app/db/dev/dbConnection createAllTables",
-    "start": "nodemon --watch. --exec babel-node - server",
-    "setup": "npm-run-all -p start create-dev-tables"
+    "serve": "nodemon server.js",
+    "start": "node server.js"
   },
-  "author": "Beveloper",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champion2030/PharmacyProject.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/champion2030/PharmacyProject/issues"
+  },
+  "homepage": "https://github.com/champion2030/PharmacyProject#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "make-runnable": "^1.3.8",
     "moment": "^2.29.1",
     "npm-run-all": "^4.1.5",
     "pg": "^8.5.1",
-    "pg-promise": "^10.9.2"
+    "to-regex-range": "^5.0.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
-    "babel-watch": "^7.4.0"
-  }
+    "babel-watch": "^7.4.0",
+    "nodemon": "^2.0.7"
+  },
+  "description": ""
 }

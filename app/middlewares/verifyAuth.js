@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import {
