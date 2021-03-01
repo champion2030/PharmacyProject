@@ -1,6 +1,8 @@
 import pkg from 'pg';
 const { Pool } = pkg;
+import dotenv from 'dotenv';
 
+dotenv.config();
 
 const pool = new Pool({
     "user": "postgres",
@@ -10,4 +12,4 @@ const pool = new Pool({
     "database" : "pharmacy"
 })
 
-export default pool;
+export default pool

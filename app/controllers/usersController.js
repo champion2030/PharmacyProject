@@ -1,15 +1,11 @@
-import dbQuery from '../db/dev/dbQuery.js';
-
 import {
     comparePassword,
     generateUserToken,
     hashPassword,
-    isEmpty,
-    isValidEmail,
-    validatePassword,
 } from '../helpers/validations.js';
 
 import {errorMessage, status, successMessage,} from '../helpers/status.js';
+import pool from "../db/dev/pool.js";
 
 /**
  * Create A User
@@ -21,19 +17,6 @@ const createUser = async (req, res) => {
     const {
         userName, email, password,
     } = req.body;
-
-    if (isEmpty(userName) || isEmpty(password) || isEmpty(email)) {
-        errorMessage.error = 'Password, userName, email field cannot be empty';
-        return res.status(status.bad).send(errorMessage);
-    }
-    if (!isValidEmail(email)) {
-        errorMessage.error = 'Please enter a valid Email';
-        return res.status(status.bad).send(errorMessage);
-    }
-    if (!validatePassword(password)) {
-        errorMessage.error = 'Password must be more than six(6) characters';
-        return res.status(status.bad).send(errorMessage);
-    }
     const hashedPassword = hashPassword(password);
     const createUserQuery = `INSERT INTO
       users(userName, email, password)
@@ -46,8 +29,8 @@ const createUser = async (req, res) => {
     ];
 
     try {
-        const {rows} = await dbQuery.query(createUserQuery, values);
-        const dbResponse = rows[0];
+        const newPerson = await pool.query(createUserQuery, values);
+        const dbResponse = newPerson.rows[0];
         delete dbResponse.password;
         const token = generateUserToken(dbResponse.id, dbResponse.username, dbResponse.email);
         successMessage.data = dbResponse;
@@ -71,18 +54,10 @@ const createUser = async (req, res) => {
  */
 const siginUser = async (req, res) => {
     const {userName, password} = req.body;
-    if (isEmpty(userName) || isEmpty(password)) {
-        errorMessage.error = 'UserName or Password detail is missing';
-        return res.status(status.bad).send(errorMessage);
-    }
-    if (!validatePassword(password)) {
-        errorMessage.error = 'Please enter a valid Password';
-        return res.status(status.bad).send(errorMessage);
-    }
     const signinUserQuery = 'SELECT * FROM users WHERE userName = $1';
     try {
-        const {rows} = await dbQuery.query(signinUserQuery, [userName]);
-        const dbResponse = rows[0];
+        const person = await pool.query(signinUserQuery, [userName]);
+        const dbResponse = person.rows[0];
         if (!dbResponse) {
             errorMessage.error = 'User with this userName does not exist';
             return res.status(status.notfound).send(errorMessage);
@@ -104,12 +79,11 @@ const siginUser = async (req, res) => {
 
 const getUsers = async (req, res) => {
     const signinUserQuery = 'SELECT * FROM users';
-    successMessage.data = await dbQuery.query(signinUserQuery)
-    return res.status(status.success).send(successMessage)
+    const users = await pool.query(signinUserQuery)
+    return res.json(users.rows)
 
 
 };
-
 
 export {
     createUser,
