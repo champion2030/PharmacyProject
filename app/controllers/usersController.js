@@ -77,15 +77,9 @@ const siginUser = async (req, res) => {
     }
 };
 
-const getUsers = async (req, res) => {
-    const signinUserQuery = 'SELECT * FROM users';
-    const users = await pool.query(signinUserQuery)
-    return res.json(users.rows)
-};
 
 
 export {
     createUser,
     siginUser,
-    getUsers,
 };
