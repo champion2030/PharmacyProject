@@ -1,5 +1,6 @@
 import express from 'express';
 import { createUser, siginUser } from '../controllers/usersController.js';
+import {getUsers} from "../controllers/usersController.js";
 import pool from "../db/dev/pool.js";
 
 const router = express.Router();
@@ -18,12 +19,15 @@ router.get('/users', async (req, res) => {
         res.json({
             users,
             totalPages: Math.ceil(count / limit),
-            currentPage: page
+            currentPage: page,
+            totalCount: count
         });
     } catch (err) {
         console.error(err.message);
     }
 });
+
+router.get('/allUsers', getUsers);
 
 
 export default router;

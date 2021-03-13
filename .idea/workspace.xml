@@ -22,7 +22,6 @@
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Authentication and Authorization with JWT">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/usersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/usersController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/dev/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/pool.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/usersRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/usersRoute.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +125,8 @@
       <workItem from="1615149083049" duration="135000" />
       <workItem from="1615405794297" duration="1577000" />
       <workItem from="1615475378200" duration="2304000" />
-      <workItem from="1615552058715" duration="8932000" />
+      <workItem from="1615552058715" duration="10883000" />
+      <workItem from="1615627619637" duration="4690000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -184,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615148938272</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Authentication and Authorization with JWT">
+      <created>1615580295227</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615580295227</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,30 +234,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1615573717118">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1615644177632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615573717118" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1615573717118">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615644177632" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1615644177632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615573717118" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1615573717118">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615644177632" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1615644177632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615573717118" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1615573717118">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615644177632" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1615644177632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615573717118" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615644177632" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1614636832658">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1615580317743">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614636832658" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615580317743" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
