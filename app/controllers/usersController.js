@@ -83,6 +83,11 @@ const getUsers = async (req, res) => {
     return res.json(users.rows)
 };
 
+const deleteUser = async (req, res) => {
+    const signinUserQuery = `DELETE * FROM users`;
+    const users = await pool.query(signinUserQuery)
+    return res.json(users.rows)
+};
 
 export {
     createUser,
