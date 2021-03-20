@@ -15,9 +15,11 @@ app.use('/api', usersRoute);
 
 
 
+
 app.listen(env.port).on('listening', () => {
   console.log(`🚀 are live on ${env.port}`);
 });
 
 
 export default app;
+

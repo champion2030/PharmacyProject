@@ -21,7 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Pagination">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/usersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/usersController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +129,8 @@
       <workItem from="1615713661374" duration="2732000" />
       <workItem from="1615818983430" duration="4877000" />
       <workItem from="1615904338971" duration="2566000" />
-      <workItem from="1616011488452" duration="65000" />
+      <workItem from="1616011488452" duration="706000" />
+      <workItem from="1616270550579" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -202,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615660129643</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Pagination">
+      <created>1616011593600</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616011593600</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,10 +273,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1615580317743">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616011587725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615580317743" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616011587725" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
