@@ -19,22 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Pagination">
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/dev/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/pool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/validations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyAuth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/usersRoute.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start.js" beforeDir="false" />
-    </list>
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Users Table" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +131,7 @@
       <workItem from="1616011488452" duration="706000" />
       <workItem from="1616270550579" duration="600000" />
       <workItem from="1616273910709" duration="44000" />
-      <workItem from="1616317336565" duration="27212000" />
+      <workItem from="1616317336565" duration="27600000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -232,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616273938926</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Users Table">
+      <created>1616362031006</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616362031006</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +249,8 @@
     <MESSAGE value="Learning" />
     <MESSAGE value="Authentication and Authorization with JWT" />
     <MESSAGE value="Pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagination" />
+    <MESSAGE value="Users Table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Users Table" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616345705211">
@@ -276,30 +269,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616350114066">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616362036929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
-    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616350114066">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616362036929" />
+    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616362036929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
-    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616350114066">
+    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616362036929" />
+    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616362036929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
-    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616350114066">
+    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616362036929" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616362036929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616362036929" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616011587725">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616362017388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616011587725" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616362017388" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
