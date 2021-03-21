@@ -20,7 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Pagination">
+      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/pool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/validations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyAuth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/usersRoute.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +72,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/db/dev" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\dev" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
     </key>
   </component>
   <component name="RunManager">
@@ -131,6 +145,8 @@
       <workItem from="1615904338971" duration="2566000" />
       <workItem from="1616011488452" duration="706000" />
       <workItem from="1616270550579" duration="600000" />
+      <workItem from="1616273910709" duration="44000" />
+      <workItem from="1616317336565" duration="27212000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -209,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616011593600</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Pagination">
+      <created>1616273938926</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616273938926</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,14 +260,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Pagination" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="175" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615148966200">
+    <state x="414" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616345705211">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="175" width="1092" height="786" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615148966200" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1615819295610">
+    <state x="414" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616345705211" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1616332745124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615819295610" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616332745124" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1613767741192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -253,22 +276,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1615928726479">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616350114066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615928726479" />
-    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1615928726479">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
+    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616350114066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615928726479" />
-    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1615928726479">
+    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
+    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616350114066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615928726479" />
-    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1615928726479">
+    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616350114066">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615928726479" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616350114066" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

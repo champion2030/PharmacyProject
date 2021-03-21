@@ -1,6 +1,7 @@
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import env from '../../env.js';
+const  bcrypt  = require('bcryptjs')
+const  jwt  = require('jsonwebtoken')
+const  env  = require('../../env.js')
+
 
 /**
  * Hash Password Method
@@ -23,7 +24,7 @@ const comparePassword = (hashedPassword, password) => {
 
 const generateUserToken = (id, userName, email) => {
     return jwt.sign({
-            user_id: id,
+            userId: id,
             userName,
             email
         },
@@ -31,8 +32,10 @@ const generateUserToken = (id, userName, email) => {
 };
 
 
-export {
+const validation = {
     hashPassword,
     comparePassword,
     generateUserToken,
 };
+
+module.exports = validation

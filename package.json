@@ -1,11 +1,10 @@
 {
   "name": "pharmacy",
   "version": "1.0.0",
-  "main": "env.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "serve": "nodemon server.js",
-    "start": "node server.js"
+    "serve": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

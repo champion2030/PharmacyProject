@@ -11,8 +11,10 @@ const status = {
   nocontent: 204,
 };
 
-export {
+const statuses =  {
   successMessage,
   errorMessage,
   status,
 };
+
+module.exports = statuses
