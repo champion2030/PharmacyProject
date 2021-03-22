@@ -18,7 +18,6 @@ exports.signup = async (req, res) => {
         successMessage.data = dbResponse;
         return res.status(status.created).send(successMessage);
     } catch (error) {
-        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
