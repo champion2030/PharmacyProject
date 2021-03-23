@@ -26,14 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Users Table">
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Form of Issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -147,7 +145,9 @@
       <workItem from="1616270550579" duration="600000" />
       <workItem from="1616273910709" duration="44000" />
       <workItem from="1616317336565" duration="27924000" />
-      <workItem from="1616433466665" duration="9504000" />
+      <workItem from="1616433466665" duration="9671000" />
+      <workItem from="1616494064135" duration="1933000" />
+      <workItem from="1616516060554" duration="5992000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -247,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616362355147</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Form of Issue">
+      <created>1616453584302</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616453584302</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +292,8 @@
     <MESSAGE value="Authentication and Authorization with JWT" />
     <MESSAGE value="Pagination" />
     <MESSAGE value="Users Table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Users Table" />
+    <MESSAGE value="Form of Issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form of Issue" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1616434126094">
@@ -312,30 +320,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616441360301">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616509073956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616441360301" />
-    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616441360301">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
+    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616509073956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616441360301" />
-    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616441360301">
+    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
+    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616509073956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616441360301" />
-    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616441360301">
+    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616509073956">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616441360301" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616362328070">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616453543037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616362328070" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616453543037" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
