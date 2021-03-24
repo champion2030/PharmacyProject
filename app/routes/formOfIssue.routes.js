@@ -1,4 +1,5 @@
 const controller = require("../controllers/formOfIssue.controller.js");
+const  {verifyFormOfIssue}  = require("../middlewares");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -9,7 +10,7 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/formOfIssues",
+    app.get("/api/getFormOfIssue",
         //[authJwt.verifyToken],
         controller.getFormOfIssues);
 
@@ -17,8 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.deleteFormOfIssue);
 
-    app.post("/api/newFormOfIssue",
+    app.post("/api/createFormOfIssue",
+        [verifyFormOfIssue.checkDuplicateFormOfIssue],
         controller.createNewForm);
 
-
+    app.put("/api/updateFormOfIssue/:id",
+        controller.updateFormOfIssue);
 };

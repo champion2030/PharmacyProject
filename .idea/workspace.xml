@@ -28,10 +28,11 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Form of Issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/user.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/auth.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/auth.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,16 +78,20 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\manufacturer_firm" />
+      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\dev" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.manufacrurer-firm-generation.js">
+    <configuration name="manufacrurer-firm-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" working-dir="$PROJECT_DIR$/app/db/manufacturer_firm">
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -107,6 +112,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.manufacrurer-firm-generation.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -147,7 +157,8 @@
       <workItem from="1616317336565" duration="27924000" />
       <workItem from="1616433466665" duration="9671000" />
       <workItem from="1616494064135" duration="1933000" />
-      <workItem from="1616516060554" duration="5992000" />
+      <workItem from="1616516060554" duration="6032000" />
+      <workItem from="1616603561845" duration="14630000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -254,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616453584302</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Form of Issue">
+      <created>1616533786497</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1616533786497</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,10 +318,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" width="1092" height="858" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616434126094" />
-    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616443324425">
+    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616619723783">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616443324425" />
+    <state x="729" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616619723783" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1616443326935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -320,30 +338,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1616509073956">
+    <state width="1899" height="184" key="GridCell.Tab.0.bottom" timestamp="1616625634541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
-    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1616509073956">
+    <state width="1899" height="184" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616625634541" />
+    <state width="1899" height="184" key="GridCell.Tab.0.center" timestamp="1616625634541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
-    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1616509073956">
+    <state width="1899" height="184" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616625634541" />
+    <state width="1899" height="184" key="GridCell.Tab.0.left" timestamp="1616625634540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
-    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1616509073956">
+    <state width="1899" height="184" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616625634540" />
+    <state width="1899" height="184" key="GridCell.Tab.0.right" timestamp="1616625634541">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616509073956" />
+    <state width="1899" height="184" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616625634541" />
     <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1614465022546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616453543037">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616533776374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616453543037" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616533776374" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
