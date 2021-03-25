@@ -25,7 +25,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 require('./app/routes/auth.routes')(app)
 require('./app/routes/user.routes')(app)
 require('./app/routes/formOfIssue.routes')(app)
-
+require('./app/routes/countryOfManufacrute.routes')(app)
+require('./app/routes/pharmacologicalGroup.routes')(app)
+require('./app/routes/typeOfProperty.routes')(app)
+require('./app/routes/pharmacyName.routes')(app)
+require('./app/routes/area.routes')(app)
 
 
 

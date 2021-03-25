@@ -1,5 +1,5 @@
 const controller = require("../controllers/formOfIssue.controller.js");
-const  {verifyFormOfIssue}  = require("../middlewares");
+const {verifyFormOfIssue} = require("../middlewares");
 
 module.exports = (app) => {
     app.use((req, res, next) => {

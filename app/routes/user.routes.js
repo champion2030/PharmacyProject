@@ -21,5 +21,4 @@ module.exports = (app) => {
     app.get("/api/users",
         //[authJwt.verifyToken],
         controller.paginatedUsers);
-
 };

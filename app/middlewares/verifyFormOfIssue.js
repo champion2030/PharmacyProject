@@ -1,7 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status} = require('../helpers/status.js')
 
-
 checkDuplicateFormOfIssue = async (req, res, next) => {
     const {form_of_issue} = req.body;
     const checkFormOfIssue = 'SELECT form_of_issue FROM form_of_issue WHERE form_of_issue = $1';

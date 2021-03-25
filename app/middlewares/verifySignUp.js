@@ -1,4 +1,4 @@
-const  pool  = require('../db/dev/pool.js')
+const pool = require('../db/dev/pool.js')
 const {errorMessage, status} = require('../helpers/status.js')
 
 
@@ -17,14 +17,14 @@ checkDuplicateUsernameOrEmail = async (req, res, next) => {
         if (dbResponse) {
             errorMessage.error = 'User with this email exist';
             return res.status(status.conflict).send(errorMessage);
-        }else {
+        } else {
             next()
         }
     }
 };
 
 const verifySignUp = {
-    checkDuplicateUsernameOrEmail : checkDuplicateUsernameOrEmail,
+    checkDuplicateUsernameOrEmail: checkDuplicateUsernameOrEmail,
 };
 
 module.exports = verifySignUp;

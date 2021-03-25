@@ -1,13 +1,12 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-
 const getUsers = async (req, res) => {
     const signinUserQuery = `SELECT * FROM users`;
     try {
         const users = await pool.query(signinUserQuery)
         return res.json(users.rows)
-    }catch (error){
+    } catch (error) {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -18,7 +17,7 @@ const deleteUser = async (req, res) => {
     try {
         await pool.query(`DELETE FROM users WHERE id = $1`, [id])
         return res.status(status.success).send(successMessage);
-    }catch (error){
+    } catch (error) {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -26,7 +25,7 @@ const deleteUser = async (req, res) => {
 };
 
 const paginatedUsers = async (req, res) => {
-    const { page = 1, limit = 10 } = req.query;
+    const {page = 1, limit = 10} = req.query;
 
     try {
         let users = await pool.query(`SELECT * FROM users LIMIT $1 OFFSET $2`, [limit, (page - 1) * limit])
@@ -44,7 +43,7 @@ const paginatedUsers = async (req, res) => {
     }
 }
 
-const userMethods =  {
+const userMethods = {
     getUsers,
     deleteUser,
     paginatedUsers

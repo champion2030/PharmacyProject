@@ -12,7 +12,7 @@ function getRandomStr(len) {
     return ret;
 }
 
-exports.getEmail = () => {
+exports.getEmail = async () => {
     const a = getRandomStr(rand(3, 5)),
         b = getRandomStr(rand(3, 5));
     return a + "." + b + "@" + endings[rand(0, endings.length - 1)];
