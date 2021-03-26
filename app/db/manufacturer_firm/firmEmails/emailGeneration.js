@@ -1,4 +1,4 @@
-const endings = ["mail.ru", "list.ru", "rambler.ru", "yandex.ru", "gmail.com"],
+const endings = ["mail.ru", "list.ru", "rambler.ru", "yandex.ru", "gmail.com", "apple.ru", "microsoft.com", "bk.ru"],
     symbols = "qwertyuiopasdfghjklzxcvbnm1234567890";
 
 function rand(min, max) {
@@ -12,7 +12,7 @@ function getRandomStr(len) {
     return ret;
 }
 
-exports.getEmail = async () => {
+exports.getEmail = () => {
     const a = getRandomStr(rand(3, 5)),
         b = getRandomStr(rand(3, 5));
     return a + "." + b + "@" + endings[rand(0, endings.length - 1)];
