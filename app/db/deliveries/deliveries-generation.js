@@ -4,7 +4,7 @@ function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
-deliveriesGeneration = async () => {
+exports.deliveriesGeneration = async (numberOfDeliveries) => {
     const deleteQuery = `DELETE FROM deliveries;`
     let seqResetQuery = "SELECT setval('deliveries_id_seq', 0);"
     let dbResponse, medicine_id, employee_id, cause_id, receipt_date, number_of_packages, presence_of_defect,
@@ -18,7 +18,7 @@ deliveriesGeneration = async () => {
     try {
         await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-        for (let i = 1; i < 8000; i++) {
+        for (let i = 1; i < numberOfDeliveries; i++) {
             receipt_date = randomDate(new Date(2001, 0, 1), new Date())
             expiry_start_date = new Date(receipt_date.setMonth(receipt_date.getMonth() - 1))
             expiration_date = new Date(receipt_date.setMonth(receipt_date.getMonth() + 12))
@@ -55,5 +55,3 @@ deliveriesGeneration = async () => {
         console.log(e)
     }
 }
-
-deliveriesGeneration()

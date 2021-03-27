@@ -1,9 +1,10 @@
 const pool = require('../../db/dev/pool.js')
+const {employeeGeneration} = require("../employee/employee-generation");
 const {randomPhoneNumberGeneration} = require("./pharmacyAddress/generate-telephone");
 const {fileToArray} = require("../common/fileToArray");
 
 
-const generatePharmacy = async (req, res) => {
+exports.generatePharmacy = async (numberOfPharmacy) => {
     const deleteQuery = `DELETE FROM pharmacy;`
     const seqResetQuery = "SELECT setval('pharmacy_id_seq', 0);"
     let Query = `INSERT INTO pharmacy(name_id, area_id, type_of_property_id, telephone, address) VALUES($1, $2, $3, $4, $5) returning *`
@@ -18,7 +19,7 @@ const generatePharmacy = async (req, res) => {
     try {
         await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-        for (let j = 0; j < 3000; j++) {
+        for (let j = 0; j < numberOfPharmacy; j++) {
             do {
                 dbResponse = await pool.query(getRandomName)
                 name_id = dbResponse.rows[0].id
@@ -40,9 +41,8 @@ const generatePharmacy = async (req, res) => {
             ]
             await pool.query(Query, values)
         }
+        await employeeGeneration(numberOfPharmacy * 2 + 2000, numberOfPharmacy)
     } catch (error) {
         console.log(error)
     }
 };
-
-generatePharmacy()

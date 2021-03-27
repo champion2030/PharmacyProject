@@ -1,4 +1,5 @@
 const pool = require('../../db/dev/pool.js')
+const {generateMedicine} = require("../medicine/medicine-generation");
 const {getEmail} = require("./firmEmails/emailGeneration");
 const {fileToArray} = require("../common/fileToArray");
 
@@ -7,7 +8,7 @@ function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
-const generateFormOfIssues = async (req, res) => {
+exports.generateManufacturingFirm = async (numberOfPharmacy) => {
     const deleteQuery = `DELETE FROM manufacturer_firm;`
     const seqResetQuery = "SELECT setval('manufacturer_firm_id_seq', 0);"
     let Query = `INSERT INTO manufacturer_firm(country_of_manufacture_id, firm_name, email, address, year_open) VALUES($1, $2, $3, $4, $5) returning *`
@@ -19,7 +20,7 @@ const generateFormOfIssues = async (req, res) => {
     try {
         await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-        for (let j = 0; j < 100; j++) {
+        for (let j = 0; j < 250; j++) {
             firm_name = firmNames[Math.floor(Math.random() * firmNames.length)]
             dbResponse = await pool.query(getRandomCountryOfManufacture)
             country_of_manufacture_id = dbResponse.rows[0].id
@@ -35,9 +36,8 @@ const generateFormOfIssues = async (req, res) => {
             ]
             await pool.query(Query,values)
         }
+        await generateMedicine(numberOfPharmacy)
     } catch (error) {
         console.log(error)
     }
 };
-
-generateFormOfIssues()

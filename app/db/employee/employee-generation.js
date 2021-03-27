@@ -1,7 +1,8 @@
 const pool = require('../../db/dev/pool.js')
 const generations = require("./fullNameGeneration");
+const {generateManufacturingFirm} = require("../manufacturer_firm/manufacrurer-firm-generation");
 
-employeeGeneration = async () => {
+exports.employeeGeneration = async (numberOfEmployees, numberOfPharmacy) => {
     const deleteQuery = `DELETE FROM employee;`
     let seqResetQuery = "SELECT setval('employee_id_seq', 0);"
     let dbResponse, pharmacy_id, name, surname, patronymic
@@ -13,10 +14,10 @@ employeeGeneration = async () => {
         await pool.query(seqResetQuery)
 
 
-        for (let i = 1; i < 8000; i++) {
-            if (i <= 3000) pharmacy_id = i
-            else if (i < 6000) {
-                pharmacy_id = 6000 - i
+        for (let i = 1; i < numberOfEmployees; i++) {
+            if (i <= numberOfPharmacy) pharmacy_id = i
+            else if (i < numberOfPharmacy * 2) {
+                pharmacy_id = numberOfPharmacy - i
             } else {
                 dbResponse = await pool.query(getRandomPharmacy)
                 pharmacy_id = dbResponse.rows[0].id
@@ -33,9 +34,8 @@ employeeGeneration = async () => {
             ]
             await pool.query(insertClientsQuery, values)
         }
+        await generateManufacturingFirm(numberOfPharmacy)
     } catch (e) {
         console.log(e)
     }
 }
-
-employeeGeneration()

@@ -1,8 +1,10 @@
 const pool = require('../../db/dev/pool.js')
+const {deliveriesGeneration} = require("../deliveries/deliveries-generation");
 const {fileToArray} = require("../common/fileToArray");
 
 
-const generateMedicine = async (req, res) => {
+exports.generateMedicine = async (numberOfPharmacy) => {
+    const numberOfMedicine = numberOfPharmacy * 2 + 3000
     const deleteQuery = `DELETE FROM medicine;`
     const seqResetQuery = "SELECT setval('medicine_id_seq', 0);"
     let Query = `INSERT INTO medicine(form_of_issue_id, pharmacological_group_id, manufacture_firm_id, medicine_name) VALUES($1, $2, $3, $4) returning *`
@@ -18,7 +20,7 @@ const generateMedicine = async (req, res) => {
     try {
         await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-        for (let j = 0; j < 8000; j++) {
+        for (let j = 0; j < numberOfMedicine; j++) {
             do {
                 dbResponse = await pool.query(getRandomFormOfIssue)
                 form_of_issue_id = dbResponse.rows[0].id
@@ -29,7 +31,6 @@ const generateMedicine = async (req, res) => {
                 medicine_name = medicineNames[Math.floor(Math.random() * medicineNames.length)] + ' ' + Math.floor(Math.random()*100)+1 + ' мг'
                 rowsCheck = await pool.query(check, [form_of_issue_id, pharmacological_group_id, manufacture_firm_id, medicine_name])
                 dbResponse = rowsCheck.rows
-                console.log(dbResponse)
             }while (dbResponse.length !== 0)
             const values = [
                 form_of_issue_id,
@@ -40,9 +41,8 @@ const generateMedicine = async (req, res) => {
 
             await pool.query(Query,values)
         }
+        await deliveriesGeneration(numberOfPharmacy * 4)
     } catch (error) {
         console.log(error)
     }
 };
-
-generateMedicine()
