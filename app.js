@@ -30,6 +30,7 @@ require('./app/routes/pharmacologicalGroup.routes')(app)
 require('./app/routes/typeOfProperty.routes')(app)
 require('./app/routes/pharmacyName.routes')(app)
 require('./app/routes/area.routes')(app)
+require('./app/routes/reasonForReturn.routes')(app)
 
 
 

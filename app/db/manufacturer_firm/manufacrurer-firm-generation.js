@@ -19,7 +19,7 @@ const generateFormOfIssues = async (req, res) => {
     try {
         await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-        for (let j = 0; j < 30; j++) {
+        for (let j = 0; j < 100; j++) {
             firm_name = firmNames[Math.floor(Math.random() * firmNames.length)]
             dbResponse = await pool.query(getRandomCountryOfManufacture)
             country_of_manufacture_id = dbResponse.rows[0].id
