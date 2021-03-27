@@ -5,12 +5,11 @@ const {fileToArray} = require("../common/fileToArray");
 
 exports.generateMedicine = async (numberOfPharmacy) => {
     const numberOfMedicine = numberOfPharmacy * 2 + 3000
-    const deleteQuery = `DELETE FROM medicine;`
     const seqResetQuery = "SELECT setval('medicine_id_seq', 0);"
     let Query = `INSERT INTO medicine(form_of_issue_id, pharmacological_group_id, manufacture_firm_id, medicine_name) VALUES($1, $2, $3, $4) returning *`
     let medicineNames = []
     let form_of_issue_id, pharmacological_group_id, manufacture_firm_id, medicine_name, dbResponse, rowsCheck;
-    medicineNames = await fileToArray("../medicine/medicineName/medicineName", medicineNames)
+    medicineNames = await fileToArray("./medicine/medicineName/medicineName", medicineNames)
     const getRandomFormOfIssue = `SELECT id FROM form_of_issue ORDER BY RANDOM() LIMIT 1`;
     const getRandomPharmacologicalGroup = `SELECT id FROM pharmacological_group ORDER BY RANDOM() LIMIT 1`;
     const getRandomManufactureFirm = `SELECT id FROM manufacturer_firm ORDER BY RANDOM() LIMIT 1`;
@@ -18,7 +17,6 @@ exports.generateMedicine = async (numberOfPharmacy) => {
     pharmacological_group_id = $2 and manufacture_firm_id = $3 and medicine_name = $4`
 
     try {
-        await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
         for (let j = 0; j < numberOfMedicine; j++) {
             do {

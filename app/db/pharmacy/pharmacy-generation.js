@@ -5,19 +5,17 @@ const {fileToArray} = require("../common/fileToArray");
 
 
 exports.generatePharmacy = async (numberOfPharmacy) => {
-    const deleteQuery = `DELETE FROM pharmacy;`
     const seqResetQuery = "SELECT setval('pharmacy_id_seq', 0);"
     let Query = `INSERT INTO pharmacy(name_id, area_id, type_of_property_id, telephone, address) VALUES($1, $2, $3, $4, $5) returning *`
     let pharmacyAddress = []
     let name_id, area_id, type_of_property_id, telephone, address, dbResponse, rowsCheck;
-    pharmacyAddress = await fileToArray("../pharmacy/pharmacyAddress/pharmacyAddress", pharmacyAddress)
+    pharmacyAddress = await fileToArray("./pharmacy/pharmacyAddress/pharmacyAddress", pharmacyAddress)
     const getRandomName = `SELECT id FROM pharmacy_name ORDER BY RANDOM() LIMIT 1`;
     const getRandomArea = `SELECT id FROM area ORDER BY RANDOM() LIMIT 1`;
     const getRandomTypeOfProperty = `SELECT id FROM type_of_property ORDER BY RANDOM() LIMIT 1`;
     const check = `select (address) from pharmacy WHERE address = $1`
 
     try {
-        await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
         for (let j = 0; j < numberOfPharmacy; j++) {
             do {

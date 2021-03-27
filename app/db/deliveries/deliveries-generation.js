@@ -5,7 +5,6 @@ function randomDate(start, end) {
 }
 
 exports.deliveriesGeneration = async (numberOfDeliveries) => {
-    const deleteQuery = `DELETE FROM deliveries;`
     let seqResetQuery = "SELECT setval('deliveries_id_seq', 0);"
     let dbResponse, medicine_id, employee_id, cause_id, receipt_date, number_of_packages, presence_of_defect,
         supplier_price, pharmacy_price, expiry_start_date, expiration_date
@@ -16,7 +15,6 @@ exports.deliveriesGeneration = async (numberOfDeliveries) => {
     let insertClientsQuery = "INSERT INTO deliveries(medicine_id, employee_id, cause_id, receipt_date, number_of_packages," +
         "presence_of_defect, supplier_price, pharmacy_price, expiry_start_date, expiration_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning *"
     try {
-        await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
         for (let i = 1; i < numberOfDeliveries; i++) {
             receipt_date = randomDate(new Date(2001, 0, 1), new Date())

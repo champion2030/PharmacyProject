@@ -3,21 +3,16 @@ const generations = require("./fullNameGeneration");
 const {generateManufacturingFirm} = require("../manufacturer_firm/manufacrurer-firm-generation");
 
 exports.employeeGeneration = async (numberOfEmployees, numberOfPharmacy) => {
-    const deleteQuery = `DELETE FROM employee;`
     let seqResetQuery = "SELECT setval('employee_id_seq', 0);"
     let dbResponse, pharmacy_id, name, surname, patronymic
     const getRandomPharmacy = `SELECT id FROM pharmacy ORDER BY RANDOM() LIMIT 1`;
     let insertClientsQuery = "INSERT INTO employee(pharmacy_id, name, surname, patronymic) VALUES($1, $2, $3, $4) returning *"
     try {
-
-        await pool.query(deleteQuery)
         await pool.query(seqResetQuery)
-
-
         for (let i = 1; i < numberOfEmployees; i++) {
             if (i <= numberOfPharmacy) pharmacy_id = i
             else if (i < numberOfPharmacy * 2) {
-                pharmacy_id = numberOfPharmacy - i
+                pharmacy_id = numberOfPharmacy * 2 - i
             } else {
                 dbResponse = await pool.query(getRandomPharmacy)
                 pharmacy_id = dbResponse.rows[0].id

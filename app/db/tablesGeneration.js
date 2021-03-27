@@ -1,19 +1,19 @@
+const pool = require("./dev/pool");
 const {generatePharmacy} = require("./pharmacy/pharmacy-generation");
+
 const fullGeneration = async (numberOfPharmacy) => {
-    let deleteAllTables = "DELETE FROM repairs;" +
-        "DELETE FROM orders;" +
-        "DELETE FROM masters;" +
-        "DELETE FROM repair_firms;" +
-        "DELETE FROM devices;" +
-        "DELETE FROM clients;"
+    let deleteAllTables = "DELETE FROM deliveries;" +
+        "DELETE FROM medicine;" +
+        "DELETE FROM manufacturer_firm;" +
+        "DELETE FROM employee;" +
+        "DELETE FROM pharmacy;"
     await pool.query(deleteAllTables, (err) => {
         if (err) throw err
-        if (numberOfPharmacy % 2) numberOfPharmacy+=1
+        if (numberOfPharmacy % 2) numberOfPharmacy += 1
         generatePharmacy(numberOfPharmacy)
     })
 
 }
-
 
 
 fullGeneration(3000)
