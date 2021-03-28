@@ -1,0 +1,20 @@
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Адренолитические препараты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Органотропные препараты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Оксазолидиноны') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Антиагреганты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Анаболики') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Анксиолитики') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Анилиды') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Вазодилататоры') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Глюкокортикостероиды') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Гастропротекторы') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Регенеранты и репаранты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Дофаминомиметики') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Симпатолитики') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Желудочно-кишечные препараты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Инсулины') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Иммунодепрессанты') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Интерлейкины') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Индукторы интерферонов') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Сульфаниламиды') RETURNING *;
+INSERT INTO pharmacological_group(pharmacological_group) VALUES('Тетрациклины') RETURNING *

@@ -1,0 +1,25 @@
+INSERT INTO pharmacy_name(name) VALUES('Живы-Здоровы') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('СБЕР ЕАПТЕКА') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('La Roche-Posay') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Будь здоров!') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Ригла') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Столетник') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Аптека-Эконом') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Реал Фарма') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Надежда-Фарм') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('ДЕЖУРНАЯ АПТЕКА') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Аптека от склада') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Планета Фарма') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Кит-фарма') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Столички') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('ЗдравСити') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Аптека24') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Доктор Н') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Планета здоровья') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('ГОРЗДРАВ') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('ФМБА России') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('ФОРТЕ') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('36,6') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('АСНА') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Самсон-Фарма') RETURNING *;
+INSERT INTO pharmacy_name(name) VALUES('Симплекс') RETURNING *

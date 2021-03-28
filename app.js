@@ -34,7 +34,6 @@ require('./app/routes/reasonForReturn.routes')(app)
 
 
 
-// set port, listen for requests
 PORT = 8080
 http.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`)

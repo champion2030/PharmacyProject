@@ -1,0 +1,9 @@
+INSERT INTO area(name_of_area) VALUES('Будённовский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Ворошиловский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Калининский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Киевский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Кировский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Куйбышевский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Ленинский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Петровский') RETURNING *;
+INSERT INTO area(name_of_area) VALUES('Пролетарский') RETURNING *
