@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getPharmacologicalGroup);
 
+    app.get("/api/getCurrentPharmacologicalGroup/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentPharmacologicalGroup);
+
     app.delete("/api/deletePharmacologicalGroup/:id",
         //[authJwt.verifyToken],
         controller.deletePharmacologicalGroup);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewPharmacologicalGroup);
 
     app.put("/api/updatePharmacologicalGroup/:id",
+        [verifyPharmacologicalGroup.checkDuplicatePharmacologicalGroup],
         controller.updatePharmacologicalGroup);
 };

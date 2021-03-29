@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getArea);
 
+    app.get("/api/getCurrentArea/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentArea);
+
     app.delete("/api/deleteArea/:id",
         //[authJwt.verifyToken],
         controller.deleteArea);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewArea);
 
     app.put("/api/updateArea/:id",
+        [verifyArea.checkDuplicateArea],
         controller.updateArea);
 };

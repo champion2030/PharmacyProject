@@ -45,17 +45,30 @@ const updateArea = async (req, res) => {
         const Query = await pool.query(`UPDATE area SET name_of_area = $1 WHERE id = $2 RETURNING *`, [name_of_area, id])
         return res.json(Query.rows[0])
     } catch (error) {
+        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
 };
+
+const getCurrentArea = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT * FROM area WHERE id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 
 const areaMethods = {
     getArea,
     deleteArea,
     createNewArea,
-    updateArea
+    updateArea,
+    getCurrentArea
 }
 
 module.exports = areaMethods

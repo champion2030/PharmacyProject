@@ -50,12 +50,24 @@ const updateTypeOfProperty = async (req, res) => {
     }
 };
 
+const getCurrentTypeOfProperty = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT * FROM type_of_property WHERE id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const typeOfPropertyMethods = {
     getTypeOfProperty,
     deleteTypeOfProperty,
     createNewTypeOfProperty,
-    updateTypeOfProperty
+    updateTypeOfProperty,
+    getCurrentTypeOfProperty
 }
 
 module.exports = typeOfPropertyMethods

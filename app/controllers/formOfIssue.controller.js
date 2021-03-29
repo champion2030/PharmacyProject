@@ -50,12 +50,24 @@ const updateFormOfIssue = async (req, res) => {
     }
 };
 
+const getCurrentFormOfIssue = async (req, res) => {
+    const id = req.params.id
+    try {
+        const formOfIssue = await pool.query(`SELECT * FROM form_of_issue WHERE id = $1`, [id])
+        return res.json(formOfIssue.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const formOfIssueMethods = {
     getFormOfIssues,
     deleteFormOfIssue,
     createNewForm,
-    updateFormOfIssue
+    updateFormOfIssue,
+    getCurrentFormOfIssue
 }
 
 module.exports = formOfIssueMethods

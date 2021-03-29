@@ -50,12 +50,24 @@ const updatePharmacologicalGroup = async (req, res) => {
     }
 };
 
+const getCurrentPharmacologicalGroup = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT * FROM pharmacological_group WHERE id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const pharmacologicalGroupMethods = {
     getPharmacologicalGroup,
     deletePharmacologicalGroup,
     createNewPharmacologicalGroup,
-    updatePharmacologicalGroup
+    updatePharmacologicalGroup,
+    getCurrentPharmacologicalGroup
 }
 
 module.exports = pharmacologicalGroupMethods

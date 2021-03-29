@@ -28,10 +28,28 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All generations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/firmNames/firmNames" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/firmNames/firmNames" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/area.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/area.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/countryOfManufacture.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/countryOfManufacture.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacologicalGroup.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacologicalGroup.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/reasonForReturn.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/reasonForReturn.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/typeOfProperty.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/typeOfProperty.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyCountryOfManufacture.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyCountryOfManufacture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyPharmacologicalGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyPharmacologicalGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyPharmacyName.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyPharmacyName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyReasonForReturn.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyReasonForReturn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyTypeOfProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyTypeOfProperty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/area.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/area.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +88,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -88,7 +106,7 @@
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.tablesGeneration.js">
+  <component name="RunManager" selected="npm.npm">
     <configuration name="deliveries-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/deliveries/deliveries-generation.js" working-dir="$PROJECT_DIR$/app/db/deliveries">
       <method v="2" />
     </configuration>
@@ -178,7 +196,8 @@
       <workItem from="1616676349942" duration="17722000" />
       <workItem from="1616771158996" duration="21409000" />
       <workItem from="1616852021811" duration="20499000" />
-      <workItem from="1616918910829" duration="8847000" />
+      <workItem from="1616918910829" duration="19718000" />
+      <workItem from="1617005979754" duration="16759000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -334,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616879671366</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="All generations">
+      <created>1616928252336</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616928252336</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,10 +417,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616443326935" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1616683271497">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1617007062274">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616683271497" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1617007062274" />
     <state x="838" y="418" key="Github.ShareDialog" timestamp="1613767741192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -403,22 +429,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="742" y="218" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613767768366" />
-    <state width="1899" height="321" key="GridCell.Tab.0.bottom" timestamp="1616925715351">
+    <state width="1899" height="321" key="GridCell.Tab.0.bottom" timestamp="1616966467009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616925715351" />
-    <state width="1899" height="321" key="GridCell.Tab.0.center" timestamp="1616925715350">
+    <state width="1899" height="321" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1616966467009" />
+    <state width="1899" height="321" key="GridCell.Tab.0.center" timestamp="1616966467009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616925715350" />
-    <state width="1899" height="321" key="GridCell.Tab.0.left" timestamp="1616925715350">
+    <state width="1899" height="321" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1616966467009" />
+    <state width="1899" height="321" key="GridCell.Tab.0.left" timestamp="1616966467009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616925715350" />
-    <state width="1899" height="321" key="GridCell.Tab.0.right" timestamp="1616925715350">
+    <state width="1899" height="321" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1616966467009" />
+    <state width="1899" height="321" key="GridCell.Tab.0.right" timestamp="1616966467009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616925715350" />
+    <state width="1899" height="321" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1616966467009" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1616707732143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -471,10 +497,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614465022546" />
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1616879664473">
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1617050416026">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1616879664473" />
+    <state x="751" y="254" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1617050416026" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1614465092528">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

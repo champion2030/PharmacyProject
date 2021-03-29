@@ -50,12 +50,24 @@ const updatePharmacyName = async (req, res) => {
     }
 };
 
+const getCurrentPharmacyName = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT * FROM pharmacy_name WHERE id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const pharmacyNameMethods = {
     getPharmacyName,
     deletePharmacyName,
     createNewPharmacyName,
-    updatePharmacyName
+    updatePharmacyName,
+    getCurrentPharmacyName
 }
 
 module.exports = pharmacyNameMethods

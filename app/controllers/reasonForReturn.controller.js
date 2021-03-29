@@ -50,12 +50,24 @@ const updateReasonForReturn = async (req, res) => {
     }
 };
 
+const getCurrentReasonForReturn = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT * FROM reason_for_return WHERE id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const returnMethods = {
     getReasonForReturn,
     deleteReasonForReturn,
     createNewReasonForReturn,
-    updateReasonForReturn
+    updateReasonForReturn,
+    getCurrentReasonForReturn
 }
 
 module.exports = returnMethods

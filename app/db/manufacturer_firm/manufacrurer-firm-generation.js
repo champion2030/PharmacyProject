@@ -16,7 +16,7 @@ exports.generateManufacturingFirm = async (numberOfPharmacy) => {
     firmNames = await fileToArray("./manufacturer_firm/firmNames/firmNames", firmNames)
     firm_address = await fileToArray("./manufacturer_firm/firmAddress/firmAddress", firm_address)
     const getRandomCountryOfManufacture = `SELECT id FROM country_of_manufacture ORDER BY RANDOM() LIMIT 1`;
-    const check = `select (email, address) from manufacturer_firm WHERE email = $1 and address = $2`
+    const check = `select (address) from manufacturer_firm WHERE address = $1`
     try {
         await pool.query(seqResetQuery)
         for (let j = 0; j < 347; j++) {
@@ -27,7 +27,7 @@ exports.generateManufacturingFirm = async (numberOfPharmacy) => {
                 email = getEmail()
                 address = firm_address[Math.floor(Math.random() * firm_address.length)] + ' ' + Math.floor(Math.random()*100)+1 + '-' + String.fromCharCode(Math.floor(Math.random()*(1040-1071))+1071)
                 year_open = randomDate(new Date(1990, 0, 1), new Date())
-                rowsCheck = await pool.query(check, [email, address])
+                rowsCheck = await pool.query(check, [address])
                 dbResponse = rowsCheck.rows
             }while (dbResponse.length !== 0)
 

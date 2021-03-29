@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCountry);
 
+    app.get("/api/getCurrentCountryOfManufacture/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentCountry)
+
     app.delete("/api/deleteCountryOfManufacture/:id",
         //[authJwt.verifyToken],
         controller.deleteCountry);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewCountry);
 
     app.put("/api/updateCountryOfManufacture/:id",
+        [verifyCountry.checkDuplicateCountry],
         controller.updateCountry);
 };

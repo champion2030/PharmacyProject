@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getFormOfIssues);
 
+    app.get("/api/getCurrentFormOfIssue/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentFormOfIssue);
+
     app.delete("/api/deleteFormOfIssue/:id",
         //[authJwt.verifyToken],
         controller.deleteFormOfIssue);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewForm);
 
     app.put("/api/updateFormOfIssue/:id",
+        [verifyFormOfIssue.checkDuplicateFormOfIssue],
         controller.updateFormOfIssue);
 };

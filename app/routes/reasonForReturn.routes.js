@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getReasonForReturn);
 
+    app.get("/api/getCurrentReasonForReturn/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentReasonForReturn);
+
     app.delete("/api/deleteReasonForReturn/:id",
         //[authJwt.verifyToken],
         controller.deleteReasonForReturn);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewReasonForReturn);
 
     app.put("/api/updateReasonForReturn/:id",
+        [verifyTypeOfProperty.checkDuplicateReasonForReturn],
         controller.updateReasonForReturn);
 };

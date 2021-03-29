@@ -14,6 +14,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getTypeOfProperty);
 
+    app.get("/api/getCurrentTypeOfProperty/:id",
+        //[authJwt.verifyToken],
+        controller.getCurrentTypeOfProperty);
+
     app.delete("/api/deleteTypeOfProperty/:id",
         //[authJwt.verifyToken],
         controller.deleteTypeOfProperty);
@@ -23,5 +27,6 @@ module.exports = (app) => {
         controller.createNewTypeOfProperty);
 
     app.put("/api/updateTypeOfProperty/:id",
+        [verifyTypeOfProperty.checkDuplicateTypeOfProperty],
         controller.updateTypeOfProperty);
 };
