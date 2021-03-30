@@ -40,6 +40,7 @@ exports.generateManufacturingFirm = async (numberOfPharmacy) => {
             ]
             await pool.query(Query,values)
         }
+        console.log("manufacture_firm generated")
         await generateMedicine(numberOfPharmacy)
     } catch (error) {
         console.log(error)

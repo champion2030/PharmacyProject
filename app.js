@@ -32,8 +32,6 @@ require('./app/routes/pharmacyName.routes')(app)
 require('./app/routes/area.routes')(app)
 require('./app/routes/reasonForReturn.routes')(app)
 
-
-
 PORT = 8080
 http.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`)

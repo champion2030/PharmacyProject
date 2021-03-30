@@ -29,6 +29,8 @@ exports.employeeGeneration = async (numberOfEmployees, numberOfPharmacy) => {
             ]
             await pool.query(insertClientsQuery, values)
         }
+        console.log("employee generated")
+
         await generateManufacturingFirm(numberOfPharmacy)
     } catch (e) {
         console.log(e)

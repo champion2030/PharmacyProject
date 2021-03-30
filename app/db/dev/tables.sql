@@ -64,7 +64,6 @@ CREATE TABLE "country_of_manufacture" (
 );
 
 
-
 CREATE TABLE "manufacturer_firm" (
 	"id" serial NOT NULL,
 	"country_of_manufacture_id" integer NOT NULL,
@@ -85,6 +84,8 @@ CREATE TABLE "medicine" (
 	"pharmacological_group_id" integer NOT NULL,
 	"manufacture_firm_id" integer NOT NULL,
 	"medicine_name" varchar(255) NOT NULL,
+	"instruction" TEXT NOT NULL,
+	"barcode" bigint NOT NULL UNIQUE,
 	CONSTRAINT "medicine_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -114,6 +115,7 @@ CREATE TABLE "deliveries" (
 	"pharmacy_price" integer NOT NULL,
 	"expiry_start_date" DATE NOT NULL,
 	"expiration_date" DATE NOT NULL,
+	"batch_number" serial NOT NULL,
 	CONSTRAINT "deliveries_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -128,8 +130,6 @@ CREATE TABLE "form_of_issue" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 
 CREATE TABLE "reason_for_return" (
