@@ -69,7 +69,7 @@ CREATE TABLE "manufacturer_firm" (
 	"country_of_manufacture_id" integer NOT NULL,
 	"firm_name" varchar(255) NOT NULL UNIQUE,
 	"email" varchar(255) NOT NULL UNIQUE,
-	"address" varchar(255) NOT NULL UNIQUE,
+	"address" varchar(255) NOT NULL,
 	"year_open" DATE NOT NULL,
 	CONSTRAINT "manufacturer_firm_pk" PRIMARY KEY ("id")
 ) WITH (
@@ -157,3 +157,4 @@ ALTER TABLE "medicine" ADD CONSTRAINT "medicine_fk2" FOREIGN KEY ("manufacture_f
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk0" FOREIGN KEY ("medicine_id") REFERENCES "medicine"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk1" FOREIGN KEY ("employee_id") REFERENCES "employee"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk2" FOREIGN KEY ("cause_id") REFERENCES "reason_for_return"("id") ON UPDATE CASCADE ON DELETE CASCADE;
+

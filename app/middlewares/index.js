@@ -7,6 +7,7 @@ const verifyTypeOfProperty = require("./verifyTypeOfProperty");
 const verifyPharmacyName = require("./verifyPharmacyName");
 const verifyArea = require("./verifyArea");
 const verifyReasonForReturn = require("./verifyReasonForReturn");
+const verifyManufacturerFirm = require("./verifyManufacturerFirm");
 
 module.exports = {
     authJwt,
@@ -17,5 +18,6 @@ module.exports = {
     verifyTypeOfProperty,
     verifyPharmacyName,
     verifyArea,
-    verifyReasonForReturn
+    verifyReasonForReturn,
+    verifyManufacturerFirm
 };

@@ -31,6 +31,8 @@ require('./app/routes/typeOfProperty.routes')(app)
 require('./app/routes/pharmacyName.routes')(app)
 require('./app/routes/area.routes')(app)
 require('./app/routes/reasonForReturn.routes')(app)
+require('./app/routes/manufacturerFirm.routes')(app)
+
 
 PORT = 8080
 http.listen(PORT, () => {

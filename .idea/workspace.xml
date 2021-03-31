@@ -27,21 +27,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All directory methods, routs, controllers, middlewares">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/employee/employee-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/employee/employee-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/firmNames/firmNames" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/firmNames/firmNames" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/area.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/area.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/country_of_manufacture.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/country_of_manufacture.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/form_of_issue.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/form_of_issue.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/pharmacological_group.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/pharmacological_group.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/pharmacy_name.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/pharmacy_name.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/reason_for_return.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/reason_for_return.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/reference_books/type_of_property.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/reference_books/type_of_property.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/tablesGeneration.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/tablesGeneration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,10 +69,11 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../React/Comfy/ComfyBack" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -99,7 +92,7 @@
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.tablesGeneration.js">
+  <component name="RunManager" selected="npm.npm">
     <configuration name="deliveries-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/deliveries/deliveries-generation.js" working-dir="$PROJECT_DIR$/app/db/deliveries">
       <method v="2" />
     </configuration>
@@ -193,7 +186,8 @@
       <workItem from="1617005979754" duration="17676000" />
       <workItem from="1617051892923" duration="255000" />
       <workItem from="1617105932187" duration="5829000" />
-      <workItem from="1617132201533" duration="4607000" />
+      <workItem from="1617132201533" duration="4756000" />
+      <workItem from="1617207752995" duration="8633000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -363,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617050481059</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="All directory methods, routs, controllers, middlewares">
+      <created>1617137173275</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1617137173275</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
