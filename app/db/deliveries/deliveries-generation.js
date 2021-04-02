@@ -49,6 +49,7 @@ exports.deliveriesGeneration = async (numberOfDeliveries) => {
             ]
             await pool.query(insertClientsQuery, values)
         }
+        console.log("deliveries generated")
     } catch (e) {
         console.log(e)
     }

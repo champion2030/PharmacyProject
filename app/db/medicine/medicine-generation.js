@@ -60,6 +60,7 @@ exports.generateMedicine = async (numberOfPharmacy) => {
             ]
             await pool.query(Query,values)
         }
+        console.log("medicine generated")
         await deliveriesGeneration(numberOfPharmacy * 4)
     } catch (error) {
         console.log(error)
