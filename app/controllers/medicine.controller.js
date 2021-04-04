@@ -24,21 +24,33 @@ const createNewMedicine = async (req, res) => {
 }
 
 const getMedicine = async (req, res) => {
-    const {page = 1, limit = 20} = req.query;
+    const {page = 1, limit = 20, searchQuery = "default"} = req.query;
+    let medicines, count
     const Query = `SELECT medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name, medicine.medicine_name, medicine.instruction, medicine.barcode
 FROM medicine
 JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
 JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
 JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id LIMIT $1 OFFSET $2`;
+    const QueryWithParams = `SELECT medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name, medicine.medicine_name, medicine.instruction, medicine.barcode
+FROM medicine
+JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
+JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
+JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.medicine_name LIKE $1 LIMIT $2 OFFSET $3`;
     try {
-        let medicines = await pool.query(Query, [limit, (page - 1) * limit])
-        let count = await pool.query(`SELECT COUNT(*) FROM medicine;`)
-        medicines = medicines.rows
+        if (searchQuery === "default") {
+            medicines = await pool.query(Query, [limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM medicine`)
+            medicines = medicines.rows
+        } else {
+            medicines = await pool.query(QueryWithParams, [searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM medicine WHERE medicine_name LIKE $1`, [searchQuery + "%"])
+            medicines = medicines.rows
+        }
         return res.json({
             medicines,
             totalPages: Math.ceil(count.rows[0].count / limit),
             currentPage: page,
-            totalCount: count.rows[0].count
+            totalCount: parseInt(count.rows[0].count)
         })
     } catch (error) {
         errorMessage.error = 'Operation was not successful';

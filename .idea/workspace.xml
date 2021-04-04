@@ -29,7 +29,13 @@
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All directory methods, routs, controllers, middlewares">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middlewares/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/employee.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employee.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/medicine.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicine.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +75,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../React/Comfy/ComfyBack" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -188,7 +194,9 @@
       <workItem from="1617397366491" duration="719000" />
       <workItem from="1617467667496" duration="169000" />
       <workItem from="1617467849041" duration="32000" />
-      <workItem from="1617467886817" duration="10410000" />
+      <workItem from="1617467886817" duration="11743000" />
+      <workItem from="1617528426959" duration="14232000" />
+      <workItem from="1617563630728" duration="2196000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -379,7 +387,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617396827937</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="All directory methods, routs, controllers, middlewares">
+      <created>1617482600014</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617482600014</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

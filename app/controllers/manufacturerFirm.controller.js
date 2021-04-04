@@ -24,22 +24,35 @@ const createNewManufacturerFirm = async (req, res) => {
 }
 
 const getManufacturerFirm = async (req, res) => {
-    const {page = 1, limit = 10} = req.query;
+    const {page = 1, limit = 10, searchQuery = "default"} = req.query;
+    let manufacturerFirms, count
     const Query = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
 FROM manufacturer_firm
 JOIN country_of_manufacture
 ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id LIMIT $1 OFFSET $2`;
-     try {
-        let manufacturerFirms = await pool.query(Query, [limit, (page - 1) * limit])
-         let count = await pool.query(`SELECT COUNT(*) FROM manufacturer_firm;`)
-        manufacturerFirms = manufacturerFirms.rows
+    const QueryWithParams = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+FROM manufacturer_firm
+JOIN country_of_manufacture
+ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1 LIMIT $2 OFFSET $3`
+    try {
+        if (searchQuery === "default") {
+            manufacturerFirms = await pool.query(Query, [limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM manufacturer_firm;`)
+            manufacturerFirms = manufacturerFirms.rows
+        } else {
+            manufacturerFirms = await pool.query(QueryWithParams, [searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM manufacturer_firm JOIN country_of_manufacture
+            ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1`, [searchQuery + "%"])
+            manufacturerFirms = manufacturerFirms.rows
+        }
         return res.json({
             manufacturerFirms,
             totalPages: Math.ceil(count.rows[0].count / limit),
             currentPage: page,
-            totalCount: count.rows[0].count
+            totalCount: parseInt(count.rows[0].count)
         })
     } catch (error) {
+        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -97,7 +110,7 @@ const manufacturerFirmMethods = {
     deleteManufacturerFirm,
     createNewManufacturerFirm,
     updateManufacturerFirm,
-    getCurrentManufacturerFirm
+    getCurrentManufacturerFirm,
 }
 
 module.exports = manufacturerFirmMethods

@@ -10,10 +10,6 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/allUsers",
-        //[authJwt.verifyToken],
-        controller.getUsers);
-
     app.delete("/api/deleteUser/:id",
         //[authJwt.verifyToken],
         controller.deleteUser);

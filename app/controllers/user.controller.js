@@ -1,17 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-const getUsers = async (req, res) => {
-    const signinUserQuery = `SELECT * FROM users`;
-    try {
-        const users = await pool.query(signinUserQuery)
-        return res.json(users.rows)
-    } catch (error) {
-        errorMessage.error = 'Operation was not successful';
-        return res.status(status.error).send(errorMessage);
-    }
-};
-
 const deleteUser = async (req, res) => {
     const id = req.params.id
     try {
@@ -25,18 +14,24 @@ const deleteUser = async (req, res) => {
 };
 
 const paginatedUsers = async (req, res) => {
-    const {page = 1, limit = 10} = req.query;
+    const {page = 1, limit = 10, searchQuery = "default"} = req.query;
+    let users, count
 
     try {
-        let users = await pool.query(`SELECT * FROM users LIMIT $1 OFFSET $2`, [limit, (page - 1) * limit])
-        users = users.rows
-        const usersLength = await pool.query(`SELECT * FROM users`)
-        const count = usersLength.rows.length
+        if (searchQuery === "default") {
+            users = await pool.query(`SELECT * FROM users LIMIT $1 OFFSET $2`, [limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM users`)
+            users = users.rows
+        } else {
+            users = await pool.query(`SELECT * FROM users WHERE username LIKE $1 LIMIT $2 OFFSET $3`, [searchQuery + "%",limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM users WHERE username LIKE $1`, [searchQuery + "%"])
+            users = users.rows
+        }
         res.json({
             users,
-            totalPages: Math.ceil(count / limit),
+            totalPages: Math.ceil(count.rows[0].count / limit),
             currentPage: page,
-            totalCount: count
+            totalCount: parseInt(count.rows[0].count)
         });
     } catch (err) {
         console.error(err.message);
@@ -44,7 +39,6 @@ const paginatedUsers = async (req, res) => {
 }
 
 const userMethods = {
-    getUsers,
     deleteUser,
     paginatedUsers
 }

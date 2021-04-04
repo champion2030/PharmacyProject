@@ -23,21 +23,33 @@ const createNewPharmacy = async (req, res) => {
 }
 
 const getPharmacy = async (req, res) => {
-    const {page = 1, limit = 10} = req.query;
+    const {page = 1, limit = 20, searchQuery = "default"} = req.query;
+    let pharmacies, count
     const Query = `SELECT pharmacy.id, pharmacy_name.name, area.name_of_area, type_of_property.name_of_property, pharmacy.telephone, pharmacy.address
 FROM pharmacy
 JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
 JOIN area ON pharmacy.area_id = area.id
 JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id LIMIT $1 OFFSET $2`;
+    const QueryWithParams = `SELECT pharmacy.id, pharmacy_name.name, area.name_of_area, type_of_property.name_of_property, pharmacy.telephone, pharmacy.address
+FROM pharmacy
+JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
+JOIN area ON pharmacy.area_id = area.id
+JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy_name.name LIKE $1 LIMIT $2 OFFSET $3`
     try {
-        let pharmacies = await pool.query(Query, [limit, (page - 1) * limit])
-        let count = await pool.query(`SELECT COUNT(*) FROM pharmacy;`)
-        pharmacies = pharmacies.rows
+        if (searchQuery === "default") {
+            pharmacies = await pool.query(Query, [limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM pharmacy`)
+            pharmacies = pharmacies.rows
+        } else {
+            pharmacies = await pool.query(QueryWithParams, [searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy_name.name LIKE $1`, [searchQuery + "%"])
+            pharmacies = pharmacies.rows
+        }
         return res.json({
             pharmacies,
             totalPages: Math.ceil(count.rows[0].count / limit),
             currentPage: page,
-            totalCount: count.rows[0].count
+            totalCount: parseInt(count.rows[0].count)
         })
     } catch (error) {
         errorMessage.error = 'Operation was not successful';
