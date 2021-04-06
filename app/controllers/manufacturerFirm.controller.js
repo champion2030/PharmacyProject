@@ -27,13 +27,13 @@ const getManufacturerFirm = async (req, res) => {
     const {page = 1, limit = 10, searchQuery = "default"} = req.query;
     let manufacturerFirms, count
     const Query = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
-FROM manufacturer_firm
-JOIN country_of_manufacture
-ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id LIMIT $1 OFFSET $2`;
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
-FROM manufacturer_firm
-JOIN country_of_manufacture
-ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1 LIMIT $2 OFFSET $3`
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1 LIMIT $2 OFFSET $3`
     try {
         if (searchQuery === "default") {
             manufacturerFirms = await pool.query(Query, [limit, (page - 1) * limit])
@@ -84,6 +84,7 @@ const updateManufacturerFirm = async (req, res) => {
  WHERE id = $6 RETURNING *`, [country_of_manufacture_id, firm_name, email, address, year_open, id])
         return res.json(manufacturerFirm.rows[0])
     } catch (error) {
+        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -92,10 +93,7 @@ const updateManufacturerFirm = async (req, res) => {
 const getCurrentManufacturerFirm = async (req, res) => {
     const id = req.params.id
     try {
-        const manufacturerFirm = await pool.query(`SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open 
-FROM manufacturer_firm 
-JOIN country_of_manufacture 
-ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.id = $1`, [id])
+        const manufacturerFirm = await pool.query(`SELECT * FROM manufacturer_firm WHERE id = $1`, [id])
         return res.json(manufacturerFirm.rows[0])
     } catch (error) {
         console.log(error)
