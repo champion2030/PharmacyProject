@@ -5,7 +5,7 @@ const {fileToArray} = require("../common/fileToArray");
 
 
 function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
 }
 
 exports.generateManufacturingFirm = async (numberOfPharmacy) => {

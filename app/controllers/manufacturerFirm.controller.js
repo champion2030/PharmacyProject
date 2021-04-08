@@ -71,7 +71,7 @@ const deleteManufacturerFirm = async (req, res) => {
 
 const updateManufacturerFirm = async (req, res) => {
     const id = req.params.id
-    const {
+    let {
         country_of_manufacture_id,
         firm_name,
         email,

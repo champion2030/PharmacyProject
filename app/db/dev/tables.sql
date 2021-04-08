@@ -70,7 +70,7 @@ CREATE TABLE "manufacturer_firm" (
 	"firm_name" varchar(255) NOT NULL UNIQUE,
 	"email" varchar(255) NOT NULL UNIQUE,
 	"address" varchar(255) NOT NULL,
-	"year_open" DATE NOT NULL,
+	"year_open" timestamp NOT NULL,
 	CONSTRAINT "manufacturer_firm_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE
@@ -108,13 +108,13 @@ CREATE TABLE "deliveries" (
 	"medicine_id" integer NOT NULL,
 	"employee_id" integer NOT NULL,
 	"cause_id" integer,
-	"receipt_date" DATE NOT NULL,
+	"receipt_date" timestamp NOT NULL,
 	"number_of_packages" integer NOT NULL,
 	"presence_of_defect" BOOLEAN NOT NULL,
 	"supplier_price" integer NOT NULL,
 	"pharmacy_price" integer NOT NULL,
-	"expiry_start_date" DATE NOT NULL,
-	"expiration_date" DATE NOT NULL,
+	"expiry_start_date" timestamp NOT NULL,
+	"expiration_date" timestamp NOT NULL,
 	"batch_number" serial NOT NULL,
 	CONSTRAINT "deliveries_pk" PRIMARY KEY ("id")
 ) WITH (
@@ -157,4 +157,3 @@ ALTER TABLE "medicine" ADD CONSTRAINT "medicine_fk2" FOREIGN KEY ("manufacture_f
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk0" FOREIGN KEY ("medicine_id") REFERENCES "medicine"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk1" FOREIGN KEY ("employee_id") REFERENCES "employee"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "deliveries" ADD CONSTRAINT "deliveries_fk2" FOREIGN KEY ("cause_id") REFERENCES "reason_for_return"("id") ON UPDATE CASCADE ON DELETE CASCADE;
-

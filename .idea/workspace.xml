@@ -29,6 +29,8 @@
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All tables with method delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Create-React-Material-UI-Confirm-Dialog-Notification-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -94,7 +96,7 @@
     <configuration name="employee-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/employee/employee-generation.js" working-dir="$PROJECT_DIR$/app/db/employee">
       <method v="2" />
     </configuration>
-    <configuration name="medicine-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" working-dir="$PROJECT_DIR$/app/db/medicine">
+    <configuration name="manufacrurer-firm-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" working-dir="$PROJECT_DIR$/app/db/manufacturer_firm">
       <method v="2" />
     </configuration>
     <configuration name="pharmacy-generation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" working-dir="$PROJECT_DIR$/app/db/pharmacy">
@@ -126,10 +128,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.tablesGeneration.js" />
+        <item itemvalue="Node.js.manufacrurer-firm-generation.js" />
         <item itemvalue="Node.js.deliveries-generation.js" />
         <item itemvalue="Node.js.employee-generation.js" />
         <item itemvalue="Node.js.pharmacy-generation.js" />
-        <item itemvalue="Node.js.medicine-generation.js" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +194,9 @@
       <workItem from="1617563630728" duration="2833000" />
       <workItem from="1617615024070" duration="1060000" />
       <workItem from="1617631337668" duration="3091000" />
-      <workItem from="1617695692956" duration="11899000" />
+      <workItem from="1617695692956" duration="14875000" />
+      <workItem from="1617798054050" duration="7761000" />
+      <workItem from="1617887954258" duration="8227000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -397,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617566943306</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="All tables with method delete">
+      <created>1617742730040</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617742730040</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
