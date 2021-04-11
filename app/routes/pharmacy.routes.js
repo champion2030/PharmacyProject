@@ -9,6 +9,10 @@ module.exports = (app) => {
         next();
     });
 
+    app.get("/api/getAllPharmacy",
+        //[authJwt.verifyToken],
+        controller.getAllPharmacy);
+
     app.get("/api/getPharmacy",
         //[authJwt.verifyToken],
         controller.getPharmacy);
@@ -22,8 +26,10 @@ module.exports = (app) => {
         controller.deletePharmacy);
 
     app.post("/api/createPharmacy",
+        //[authJwt.verifyToken],
         controller.createNewPharmacy);
 
     app.put("/api/updatePharmacy/:id",
+        //[authJwt.verifyToken],
         controller.updatePharmacy);
 };

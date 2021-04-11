@@ -1,7 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-
 const createNewPharmacyName = async (req, res) => {
     const {name} = req.body;
     const Query = `INSERT INTO pharmacy_name(name) VALUES($1) RETURNING *`;
@@ -60,7 +59,6 @@ const getCurrentPharmacyName = async (req, res) => {
         return res.status(status.error).send(errorMessage);
     }
 };
-
 
 const pharmacyNameMethods = {
     getPharmacyName,

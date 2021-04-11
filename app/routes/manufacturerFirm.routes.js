@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentManufacturerFirm);
 
+    app.get("/api/getAllManufacturerFirm",
+        //[authJwt.verifyToken],
+        controller.getAllManufacturerFirm);
+
     app.delete("/api/deleteManufacturerFirm/:id",
         //[authJwt.verifyToken],
         controller.deleteManufacturerFirm);
@@ -27,6 +31,6 @@ module.exports = (app) => {
         controller.createNewManufacturerFirm);
 
     app.put("/api/updateManufacturerFirm/:id",
-        [verifyManufacturerFirm.checkDuplicateManufacturerFirm],
+        [verifyManufacturerFirm.checkDuplicateManufacturerFirmOnUpdate],
         controller.updateManufacturerFirm);
 };

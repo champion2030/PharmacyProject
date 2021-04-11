@@ -9,6 +9,10 @@ module.exports = (app) => {
         next();
     });
 
+    app.get("/api/getAllEmployee",
+        //[authJwt.verifyToken],
+        controller.getAllEmployee);
+
     app.get("/api/getEmployee",
         //[authJwt.verifyToken],
         controller.getEmployee);
@@ -22,8 +26,10 @@ module.exports = (app) => {
         controller.deleteEmployee);
 
     app.post("/api/createEmployee",
+        //[authJwt.verifyToken],
         controller.createNewEmployee);
 
     app.put("/api/updateEmployee/:id",
+        //[authJwt.verifyToken],
         controller.updateEmployee);
 };

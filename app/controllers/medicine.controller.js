@@ -97,14 +97,22 @@ const updateMedicine = async (req, res) => {
 const getCurrentMedicine = async (req, res) => {
     const id = req.params.id
     try {
-        const Query = await pool.query(`SELECT medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name, medicine.medicine_name, medicine.instruction, medicine.barcode
-FROM medicine
-JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
-JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
-JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.id = $1`, [id])
+        const Query = await pool.query(`SELECT * FROM medicine WHERE medicine.id = $1`, [id])
         return res.json(Query.rows[0])
     } catch (error) {
         console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
+const getAllMedicine = async (req, res) => {
+    let medicines
+    const QueryWithParams = `SELECT medicine.id, medicine.medicine_name FROM medicine`;
+    try {
+        medicines = await pool.query(QueryWithParams)
+        return res.json(medicines.rows)
+    } catch (error) {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -116,7 +124,8 @@ const medicineMethods = {
     deleteMedicine,
     createNewMedicine,
     updateMedicine,
-    getCurrentMedicine
+    getCurrentMedicine,
+    getAllMedicine
 }
 
 module.exports = medicineMethods

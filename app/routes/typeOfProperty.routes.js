@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewTypeOfProperty);
 
     app.put("/api/updateTypeOfProperty/:id",
-        [verifyTypeOfProperty.checkDuplicateTypeOfProperty],
+        [verifyTypeOfProperty.checkDuplicateTypeOfPropertyOnUpdate],
         controller.updateTypeOfProperty);
 };

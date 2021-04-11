@@ -18,8 +18,8 @@ exports.employeeGeneration = async (numberOfEmployees, numberOfPharmacy) => {
                 pharmacy_id = dbResponse.rows[0].id
             }
             const fullName = await generations.fullNameGeneration()
-            name = fullName.randomLastname
-            surname = fullName.randomFirstname
+            name = fullName.randomFirstname
+            surname = fullName.randomLastname
             patronymic = fullName.randomMiddlename
             const values = [
                 pharmacy_id,

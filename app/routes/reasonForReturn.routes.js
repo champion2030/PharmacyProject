@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewReasonForReturn);
 
     app.put("/api/updateReasonForReturn/:id",
-        [verifyTypeOfProperty.checkDuplicateReasonForReturn],
+        [verifyTypeOfProperty.checkDuplicateReasonForReturnOnUpdate],
         controller.updateReasonForReturn);
 };

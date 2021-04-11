@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewCountry);
 
     app.put("/api/updateCountryOfManufacture/:id",
-        [verifyCountry.checkDuplicateCountry],
+        [verifyCountry.checkDuplicateCountryOnUpdate],
         controller.updateCountry);
 };

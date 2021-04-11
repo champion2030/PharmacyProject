@@ -102,6 +102,18 @@ const getCurrentManufacturerFirm = async (req, res) => {
     }
 };
 
+const getAllManufacturerFirm = async (req, res) => {
+    const Query = `SELECT manufacturer_firm.id, manufacturer_firm.firm_name FROM manufacturer_firm`
+    try {
+        const manufacturerFirms = await pool.query(Query)
+        return res.json(manufacturerFirms.rows)
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const manufacturerFirmMethods = {
     getManufacturerFirm,
@@ -109,6 +121,7 @@ const manufacturerFirmMethods = {
     createNewManufacturerFirm,
     updateManufacturerFirm,
     getCurrentManufacturerFirm,
+    getAllManufacturerFirm,
 }
 
 module.exports = manufacturerFirmMethods

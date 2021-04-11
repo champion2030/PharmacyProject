@@ -1,1 +1,1 @@
-exports.randomPhoneNumberGeneration = () => '+' + Math.floor(1000000000 + Math.random() * 9000000000)
+exports.randomPhoneNumberGeneration = () => '+' + Math.floor(100000000000 + Math.random() * 999999999999)

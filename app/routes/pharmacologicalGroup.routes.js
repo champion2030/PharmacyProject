@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewPharmacologicalGroup);
 
     app.put("/api/updatePharmacologicalGroup/:id",
-        [verifyPharmacologicalGroup.checkDuplicatePharmacologicalGroup],
+        [verifyPharmacologicalGroup.checkDuplicatePharmacologicalGroupOnUpdate],
         controller.updatePharmacologicalGroup);
 };

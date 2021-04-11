@@ -10,6 +10,10 @@ module.exports = (app) => {
         next();
     });
 
+    app.get("/api/getAllMedicine",
+        //[authJwt.verifyToken],
+        controller.getAllMedicine);
+
     app.get("/api/getMedicine",
         //[authJwt.verifyToken],
         controller.getMedicine);
@@ -27,6 +31,6 @@ module.exports = (app) => {
         controller.createNewMedicine);
 
     app.put("/api/updateMedicine/:id",
-        [verifyMedicine.checkDuplicateMedicine],
+        [verifyMedicine.checkDuplicateMedicineOnUpdate],
         controller.updateMedicine);
 };

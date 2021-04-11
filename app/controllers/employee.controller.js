@@ -12,9 +12,14 @@ const createNewEmployee = async (req, res) => {
     const Query = `INSERT INTO employee(pharmacy_id, name, surname, patronymic) VALUES($1, $2, $3, $4) RETURNING *`;
     const values = [pharmacy_id, name, surname, patronymic];
     try {
-        const newEmployee = await pool.query(Query, values);
-        successMessage.data = newEmployee.rows[0];
-        return res.status(status.created).send(successMessage);
+        if (pharmacy_id === "" || name === "" || surname === "" || patronymic === "") {
+            errorMessage.error = 'Fields can not be empty';
+            return res.status(status.conflict).send(errorMessage);
+        } else {
+            const newEmployee = await pool.query(Query, values);
+            successMessage.data = newEmployee.rows[0];
+            return res.status(status.created).send(successMessage);
+        }
     } catch (error) {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
@@ -74,12 +79,13 @@ const updateEmployee = async (req, res) => {
         patronymic
     } = req.body;
     try {
-        const Query = await pool.query(`UPDATE employee SET pharmacy_id = $1, name = $2, surname = $3, patronymic = $4 WHERE id = $5 RETURNING *`, [pharmacy_id,
-            name,
-            surname,
-            patronymic,
-            id])
-        return res.json(Query.rows[0])
+        if (pharmacy_id === "" || name === "" || surname === "" || patronymic === "") {
+            errorMessage.error = 'Fields can not be empty';
+            return res.status(status.conflict).send(errorMessage);
+        } else {
+            const Query = await pool.query(`UPDATE employee SET pharmacy_id = $1, name = $2, surname = $3, patronymic = $4 WHERE id = $5 RETURNING *`, [pharmacy_id, name, surname, patronymic, id])
+            return res.json(Query.rows[0])
+        }
     } catch (error) {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
@@ -100,13 +106,26 @@ JOIN pharmacy ON employee.pharmacy_id = pharmacy.id WHERE employee.id = $1`, [id
     }
 };
 
+const getAllEmployee = async (req, res) => {
+    let employees
+    const Query = `SELECT employee.id, (employee.name || ' ' || employee.surname || ' ' || employee.patronymic) AS full_name, (SELECT pharmacy_name.name FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy.id = employee.pharmacy_id) AS pharmacy_name FROM employee`;
+    try {
+        employees = await pool.query(Query)
+        return res.json(employees.rows)
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+};
+
 
 const employeeMethods = {
     getEmployee,
     deleteEmployee,
     createNewEmployee,
     updateEmployee,
-    getCurrentEmployee
+    getCurrentEmployee,
+    getAllEmployee
 }
 
 module.exports = employeeMethods

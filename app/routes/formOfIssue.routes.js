@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewForm);
 
     app.put("/api/updateFormOfIssue/:id",
-        [verifyFormOfIssue.checkDuplicateFormOfIssue],
+        [verifyFormOfIssue.checkDuplicateFormOfIssueOnUpdate],
         controller.updateFormOfIssue);
 };

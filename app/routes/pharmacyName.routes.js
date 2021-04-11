@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewPharmacyName);
 
     app.put("/api/updatePharmacyName/:id",
-        [verifyPharmacyName.checkDuplicatePharmacyName],
+        [verifyPharmacyName.checkDuplicatePharmacyNameOnUpdate],
         controller.updatePharmacyName);
 };

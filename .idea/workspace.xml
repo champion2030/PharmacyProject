@@ -28,9 +28,37 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All tables with method delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/employee.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employee.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/manufacturer_firm/manufacrurer-firm-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/medicine.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicine.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/employee/employee-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/employee/employee-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/medicine/medicineName/medicineName" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/medicine/medicineName/medicineName" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/pharmacy/pharmacyAddress/generate-telephone.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/pharmacy/pharmacyAddress/generate-telephone.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyCountryOfManufacture.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyCountryOfManufacture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyManufacturerFirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyManufacturerFirm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyMedicine.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyMedicine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyPharmacologicalGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyPharmacologicalGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyPharmacyName.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyPharmacyName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyReasonForReturn.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyReasonForReturn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyTypeOfProperty.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyTypeOfProperty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/area.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/area.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/employee.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/employee.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/medicine.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/medicine.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +224,11 @@
       <workItem from="1617631337668" duration="3091000" />
       <workItem from="1617695692956" duration="14875000" />
       <workItem from="1617798054050" duration="7761000" />
-      <workItem from="1617887954258" duration="8227000" />
+      <workItem from="1617887954258" duration="10424000" />
+      <workItem from="1617962266263" duration="19926000" />
+      <workItem from="1618058937007" duration="13338000" />
+      <workItem from="1618130603347" duration="4224000" />
+      <workItem from="1618139869622" duration="2735000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -408,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617742730040</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="All tables with method delete">
+      <created>1617901761139</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1617901761139</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

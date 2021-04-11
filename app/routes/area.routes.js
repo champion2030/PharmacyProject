@@ -27,6 +27,6 @@ module.exports = (app) => {
         controller.createNewArea);
 
     app.put("/api/updateArea/:id",
-        [verifyArea.checkDuplicateArea],
+        [verifyArea.checkDuplicateAreaOnUpdate],
         controller.updateArea);
 };
