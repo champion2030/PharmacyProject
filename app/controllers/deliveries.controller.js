@@ -146,9 +146,16 @@ const updateDeliver = async (req, res) => {
 const getCurrentDeliver = async (req, res) => {
     const id = req.params.id
     try {
-        const Query = await pool.query(`SELECT * FROM deliveries WHERE id = $1`, [id])
+        const Query = await pool.query(`SELECT deliveries.id, deliveries.medicine_id, medicine.medicine_name, deliveries.employee_id, (employee.name || ' ' || employee.surname || ' ' || employee.patronymic) AS employee_full_name, 
+        deliveries.cause_id, reason_for_return.reason_for_return, deliveries.receipt_date, deliveries.number_of_packages,
+        deliveries.presence_of_defect, deliveries.supplier_price, deliveries.pharmacy_price, deliveries.expiry_start_date, deliveries.expiration_date, deliveries.batch_number
+        FROM deliveries
+        JOIN medicine ON deliveries.medicine_id = medicine.id
+        JOIN employee ON deliveries.employee_id = employee.id
+        LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id WHERE deliveries.id = $1`, [id])
         return res.json(Query.rows[0])
     } catch (error) {
+        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }

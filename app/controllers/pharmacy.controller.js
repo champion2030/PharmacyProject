@@ -129,7 +129,12 @@ const updatePharmacy = async (req, res) => {
 const getCurrentPharmacy = async (req, res) => {
     const id = req.params.id
     try {
-        const Query = await pool.query(`SELECT * FROM pharmacy WHERE id = $1`, [id])
+        const Query = await pool.query(`SELECT pharmacy.id, pharmacy.name_id, pharmacy_name.name, pharmacy.area_id, area.name_of_area, pharmacy.type_of_property_id,
+        type_of_property.name_of_property, pharmacy.telephone, pharmacy.address
+        FROM pharmacy
+        JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
+        JOIN area ON pharmacy.area_id = area.id
+        JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy.id = $1`, [id])
         return res.json(Query.rows[0])
     } catch (error) {
         errorMessage.error = 'Operation was not successful';

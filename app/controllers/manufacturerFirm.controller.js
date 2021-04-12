@@ -93,7 +93,10 @@ const updateManufacturerFirm = async (req, res) => {
 const getCurrentManufacturerFirm = async (req, res) => {
     const id = req.params.id
     try {
-        const manufacturerFirm = await pool.query(`SELECT * FROM manufacturer_firm WHERE id = $1`, [id])
+        const manufacturerFirm = await pool.query(`SELECT manufacturer_firm.id, manufacturer_firm.country_of_manufacture_id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.id = $1`, [id])
         return res.json(manufacturerFirm.rows[0])
     } catch (error) {
         console.log(error)
