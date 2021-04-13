@@ -29,9 +29,8 @@
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All tables, methods and other">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/medicine.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicine.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/tablesGeneration.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/tablesGeneration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/deliveries.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/deliveries.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +202,9 @@
       <workItem from="1618130603347" duration="4224000" />
       <workItem from="1618139869622" duration="3381000" />
       <workItem from="1618151840595" duration="6903000" />
-      <workItem from="1618237189842" duration="7991000" />
+      <workItem from="1618237189842" duration="13882000" />
+      <workItem from="1618304988769" duration="7644000" />
+      <workItem from="1618325825097" duration="2595000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -429,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618150964374</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="All tables, methods and other">
+      <created>1618257573605</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1618257573605</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
