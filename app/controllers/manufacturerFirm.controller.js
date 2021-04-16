@@ -29,11 +29,11 @@ const getManufacturerFirm = async (req, res) => {
     const Query = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
     FROM manufacturer_firm
     JOIN country_of_manufacture
-    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id LIMIT $1 OFFSET $2`;
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id ORDER BY manufacturer_firm.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
     FROM manufacturer_firm
     JOIN country_of_manufacture
-    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1 LIMIT $2 OFFSET $3`
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.firm_name LIKE $1 ORDER BY manufacturer_firm.id LIMIT $2 OFFSET $3`
     try {
         if (searchQuery === "default") {
             manufacturerFirms = await pool.query(Query, [limit, (page - 1) * limit])

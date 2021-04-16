@@ -1,7 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-
 const createNewMedicine = async (req, res) => {
     const {
         form_of_issue_id,
@@ -30,12 +29,12 @@ const getMedicine = async (req, res) => {
 FROM medicine
 JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
 JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
-JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id LIMIT $1 OFFSET $2`;
+JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id ORDER BY medicine.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name, medicine.medicine_name, medicine.instruction, medicine.barcode
 FROM medicine
 JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
 JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
-JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.medicine_name LIKE $1 LIMIT $2 OFFSET $3`;
+JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.medicine_name LIKE $1 ORDER BY medicine.id LIMIT $2 OFFSET $3`;
     try {
         if (searchQuery === "default") {
             medicines = await pool.query(Query, [limit, (page - 1) * limit])
@@ -122,7 +121,6 @@ const getAllMedicine = async (req, res) => {
         return res.status(status.error).send(errorMessage);
     }
 };
-
 
 const medicineMethods = {
     getMedicine,

@@ -10,8 +10,6 @@ CREATE TABLE "pharmacy" (
   OIDS=FALSE
 );
 
-
-
 CREATE TABLE "type_of_property" (
 	"id" serial NOT NULL,
 	"name_of_property" varchar(255) NOT NULL UNIQUE,
@@ -19,8 +17,6 @@ CREATE TABLE "type_of_property" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 CREATE TABLE "pharmacy_name" (
 	"id" serial NOT NULL,
@@ -30,8 +26,6 @@ CREATE TABLE "pharmacy_name" (
   OIDS=FALSE
 );
 
-
-
 CREATE TABLE "area" (
 	"id" serial NOT NULL,
 	"name_of_area" varchar(255) NOT NULL UNIQUE,
@@ -39,8 +33,6 @@ CREATE TABLE "area" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 CREATE TABLE "employee" (
 	"id" serial NOT NULL,
@@ -53,8 +45,6 @@ CREATE TABLE "employee" (
   OIDS=FALSE
 );
 
-
-
 CREATE TABLE "country_of_manufacture" (
 	"id" serial NOT NULL,
 	"country" varchar(255) NOT NULL UNIQUE,
@@ -62,7 +52,6 @@ CREATE TABLE "country_of_manufacture" (
 ) WITH (
   OIDS=FALSE
 );
-
 
 CREATE TABLE "manufacturer_firm" (
 	"id" serial NOT NULL,
@@ -75,8 +64,6 @@ CREATE TABLE "manufacturer_firm" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 CREATE TABLE "medicine" (
 	"id" serial NOT NULL,
@@ -91,8 +78,6 @@ CREATE TABLE "medicine" (
   OIDS=FALSE
 );
 
-
-
 CREATE TABLE "pharmacological_group" (
 	"id" serial NOT NULL,
 	"pharmacological_group" varchar(255) NOT NULL UNIQUE,
@@ -100,8 +85,6 @@ CREATE TABLE "pharmacological_group" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 CREATE TABLE "deliveries" (
 	"id" serial NOT NULL,
@@ -121,8 +104,6 @@ CREATE TABLE "deliveries" (
   OIDS=FALSE
 );
 
-
-
 CREATE TABLE "form_of_issue" (
 	"id" serial NOT NULL,
 	"form_of_issue" varchar(255) NOT NULL UNIQUE,
@@ -131,7 +112,6 @@ CREATE TABLE "form_of_issue" (
   OIDS=FALSE
 );
 
-
 CREATE TABLE "reason_for_return" (
 	"id" serial NOT NULL,
 	"reason_for_return" varchar(255) NOT NULL UNIQUE,
@@ -139,8 +119,6 @@ CREATE TABLE "reason_for_return" (
 ) WITH (
   OIDS=FALSE
 );
-
-
 
 ALTER TABLE "pharmacy" ADD CONSTRAINT "pharmacy_fk0" FOREIGN KEY ("name_id") REFERENCES "pharmacy_name"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "pharmacy" ADD CONSTRAINT "pharmacy_fk1" FOREIGN KEY ("area_id") REFERENCES "area"("id") ON UPDATE CASCADE ON DELETE CASCADE;

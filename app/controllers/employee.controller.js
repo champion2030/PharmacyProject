@@ -32,11 +32,11 @@ const getEmployee = async (req, res) => {
     const Query = `SELECT employee.id, employee.pharmacy_id, (SELECT pharmacy_name.name FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy.id = employee.pharmacy_id) AS pharmacy_name, 
 employee.name, employee.surname, employee.patronymic
 FROM employee
-JOIN pharmacy ON employee.pharmacy_id = pharmacy.id LIMIT $1 OFFSET $2`;
+JOIN pharmacy ON employee.pharmacy_id = pharmacy.id ORDER BY employee.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT employee.id, employee.pharmacy_id, (SELECT pharmacy_name.name FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy.id = employee.pharmacy_id) AS pharmacy_name, 
 employee.name, employee.surname, employee.patronymic
 FROM employee
-JOIN pharmacy ON employee.pharmacy_id = pharmacy.id WHERE employee.name LIKE $1 OR employee.surname LIKE $2 LIMIT $3 OFFSET $4`;
+JOIN pharmacy ON employee.pharmacy_id = pharmacy.id WHERE employee.name LIKE $1 OR employee.surname LIKE $2 ORDER BY employee.id LIMIT $3 OFFSET $4`;
     try {
         if (searchQuery === "default") {
             employees = await pool.query(Query, [limit, (page - 1) * limit])

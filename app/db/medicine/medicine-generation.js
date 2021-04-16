@@ -10,7 +10,7 @@ function randomInteger(min, max) {
 
 
 exports.generateMedicine = async (numberOfPharmacy) => {
-    const numberOfMedicine = numberOfPharmacy * 2 + 3000
+    const numberOfMedicine = numberOfPharmacy * 5
     const seqResetQuery = "SELECT setval('medicine_id_seq', 0);"
     let Query = `INSERT INTO medicine(form_of_issue_id, pharmacological_group_id, manufacture_firm_id, medicine_name, instruction, barcode) VALUES($1, $2, $3, $4, $5, $6) returning *`
     let medicineNames = []

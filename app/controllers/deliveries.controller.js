@@ -52,13 +52,13 @@ const getDeliveries = async (req, res) => {
     FROM deliveries
     JOIN medicine ON deliveries.medicine_id = medicine.id
     JOIN employee ON deliveries.employee_id = employee.id
-    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id LIMIT $1 OFFSET $2`;
+    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id ORDER BY deliveries.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT deliveries.id, medicine.medicine_name, (employee.name || ' ' || employee.surname || ' ' || employee.patronymic) AS full_name, reason_for_return.reason_for_return, deliveries.receipt_date, deliveries.number_of_packages, 
     deliveries.presence_of_defect, deliveries.supplier_price, deliveries.pharmacy_price, deliveries.expiry_start_date, deliveries.expiration_date, deliveries.batch_number
     FROM deliveries
     JOIN medicine ON deliveries.medicine_id = medicine.id
     JOIN employee ON deliveries.employee_id = employee.id
-    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id WHERE medicine.medicine_name LIKE $1 OR employee.name LIKE $2 LIMIT $3 OFFSET $4`
+    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id WHERE medicine.medicine_name LIKE $1 OR employee.name LIKE $2 ORDER BY deliveries.id LIMIT $3 OFFSET $4`
     try {
         if (searchQuery === "default") {
             deliveries = await pool.query(Query, [limit, (page - 1) * limit])
@@ -163,8 +163,6 @@ const getCurrentDeliver = async (req, res) => {
 
 const getDeliversForCurrentPharmacy = async (req, res) => {
     const id = req.params.id
-    const {page = 1, limit = 10} = req.query;
-    let count, delivers;
     try {
         const Query = await pool.query(`SELECT deliveries.id, medicine.medicine_name, (employee.name || ' ' || employee.surname || ' ' || employee.patronymic) AS full_name, 
     reason_for_return.reason_for_return, deliveries.receipt_date, deliveries.number_of_packages, 
@@ -173,22 +171,13 @@ const getDeliversForCurrentPharmacy = async (req, res) => {
     JOIN medicine ON deliveries.medicine_id = medicine.id
     LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id 
     JOIN employee ON deliveries.employee_id = employee.id WHERE employee.pharmacy_id = $1`, [id])
-        count = Query.rows.length
-        delivers = Query.rows
         return res.json(Query.rows)
-        // return res.json({
-        //     delivers,
-        //     totalPages: Math.ceil(count / limit),
-        //     currentPage: page,
-        //     totalCount: count
-        // })
     } catch (error) {
         console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
 };
-
 
 const deliverMethods = {
     getDeliveries,

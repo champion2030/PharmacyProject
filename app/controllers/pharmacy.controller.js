@@ -47,12 +47,12 @@ const getPharmacy = async (req, res) => {
     FROM pharmacy
     JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
     JOIN area ON pharmacy.area_id = area.id
-    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id LIMIT $1 OFFSET $2`;
+    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id ORDER BY pharmacy.id LIMIT $1 OFFSET $2`;
     const QueryWithParams = `SELECT pharmacy.id, pharmacy_name.name, area.name_of_area, type_of_property.name_of_property, pharmacy.telephone, pharmacy.address
     FROM pharmacy
     JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
     JOIN area ON pharmacy.area_id = area.id
-    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy_name.name LIKE $1 LIMIT $2 OFFSET $3`
+    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy_name.name LIKE $1 ORDER BY pharmacy.id LIMIT $2 OFFSET $3`
     try {
         if (searchQuery === "default") {
             pharmacies = await pool.query(Query, [limit, (page - 1) * limit])
