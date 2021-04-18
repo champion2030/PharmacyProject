@@ -59,7 +59,26 @@ const getCurrentTypeOfProperty = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
+
+const getDeleteTypeOfPropertyInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT 
+        count(distinct pharmacy.id) as pharmacy,
+        count(distinct employee.id) as employee,
+        count(distinct deliveries.id) as deliveries
+        from type_of_property
+        left join pharmacy on type_of_property.id = pharmacy.type_of_property_id
+        left join employee on pharmacy.id = employee.pharmacy_id
+        left join deliveries on employee.id = deliveries.employee_id
+        where type_of_property.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 
 const typeOfPropertyMethods = {
@@ -67,7 +86,8 @@ const typeOfPropertyMethods = {
     deleteTypeOfProperty,
     createNewTypeOfProperty,
     updateTypeOfProperty,
-    getCurrentTypeOfProperty
+    getCurrentTypeOfProperty,
+    getDeleteTypeOfPropertyInfo
 }
 
 module.exports = typeOfPropertyMethods

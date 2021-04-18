@@ -150,8 +150,24 @@ const getAllPharmacy = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
 
+const getDeletePharmacyInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT 
+        count(distinct employee.id) as employee,
+        count(distinct deliveries.id) as deliveries
+        from pharmacy
+        left join employee on pharmacy.id = employee.pharmacy_id
+        left join deliveries on employee.id = deliveries.employee_id
+        where pharmacy.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 const pharmacyMethods = {
     getPharmacy,
@@ -159,7 +175,8 @@ const pharmacyMethods = {
     createNewPharmacy,
     updatePharmacy,
     getCurrentPharmacy,
-    getAllPharmacy
+    getAllPharmacy,
+    getDeletePharmacyInfo
 }
 
 module.exports = pharmacyMethods

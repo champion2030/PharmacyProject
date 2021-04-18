@@ -36,6 +36,7 @@ require('./app/routes/pharmacy.routes')(app)
 require('./app/routes/employee.routes')(app)
 require('./app/routes/medicine.routes')(app)
 require('./app/routes/deliveries.routes')(app)
+require('./app/routes/requests.routes')(app)
 
 
 PORT = 8080

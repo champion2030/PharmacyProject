@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentCountry)
 
+    app.get("/api/deleteCountryOfManufactureInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteCountryInfo)
+
     app.delete("/api/deleteCountryOfManufacture/:id",
         //[authJwt.verifyToken],
         controller.deleteCountry);

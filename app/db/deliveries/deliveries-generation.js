@@ -4,7 +4,7 @@ function randomDate(start, end) {
     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
-exports.deliveriesGeneration = async (numberOfDeliveries) => {
+exports.deliveriesGeneration = async () => {
     let seqResetQuery = "SELECT setval('deliveries_id_seq', 0);"
     let dbResponse, medicine_id, employee_id, cause_id, receipt_date, number_of_packages, presence_of_defect,
         supplier_price, pharmacy_price, expiry_start_date, expiration_date
@@ -16,7 +16,7 @@ exports.deliveriesGeneration = async (numberOfDeliveries) => {
         "presence_of_defect, supplier_price, pharmacy_price, expiry_start_date, expiration_date) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) returning *"
     try {
         await pool.query(seqResetQuery)
-        for (let i = 1; i < numberOfDeliveries; i++) {
+        for (let i = 1; i < 10000; i++) {
             receipt_date = randomDate(new Date(2001, 0, 1), new Date())
             expiry_start_date = new Date(receipt_date.setMonth(receipt_date.getMonth() - 1))
             expiration_date = new Date(receipt_date.setMonth(receipt_date.getMonth() + 12))

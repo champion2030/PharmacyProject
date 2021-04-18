@@ -59,7 +59,22 @@ const getCurrentReasonForReturn = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
+
+const getDeleteReasonForReturnInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT 
+        count(distinct deliveries.id) as deliveries
+        from reason_for_return
+        left join deliveries on reason_for_return.id = deliveries.cause_id
+        where reason_for_return.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 
 const returnMethods = {
@@ -67,7 +82,8 @@ const returnMethods = {
     deleteReasonForReturn,
     createNewReasonForReturn,
     updateReasonForReturn,
-    getCurrentReasonForReturn
+    getCurrentReasonForReturn,
+    getDeleteReasonForReturnInfo
 }
 
 module.exports = returnMethods

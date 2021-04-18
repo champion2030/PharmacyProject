@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentFormOfIssue);
 
+    app.get("/api/getDeleteFormOfIssueInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteFormOfIssueInfo);
+
     app.delete("/api/deleteFormOfIssue/:id",
         //[authJwt.verifyToken],
         controller.deleteFormOfIssue);

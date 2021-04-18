@@ -21,6 +21,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentEmployee);
 
+    app.get("/api/deleteEmployeeInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteEmployeeInfo);
+
     app.delete("/api/deleteEmployee/:id",
         //[authJwt.verifyToken],
         controller.deleteEmployee);

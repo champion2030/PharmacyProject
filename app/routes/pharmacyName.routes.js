@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentPharmacyName);
 
+    app.get("/api/deletePharmacyNameInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeletePharmacyNameInfo);
+
     app.delete("/api/deletePharmacyName/:id",
         //[authJwt.verifyToken],
         controller.deletePharmacyName);

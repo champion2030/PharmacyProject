@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentTypeOfProperty);
 
+    app.get("/api/deleteTypeOfPropertyInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteTypeOfPropertyInfo);
+
     app.delete("/api/deleteTypeOfProperty/:id",
         //[authJwt.verifyToken],
         controller.deleteTypeOfProperty);

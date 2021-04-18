@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentArea);
 
+    app.get("/api/deleteAreaInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteAreaInfo);
+
     app.delete("/api/deleteArea/:id",
         //[authJwt.verifyToken],
         controller.deleteArea);

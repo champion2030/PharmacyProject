@@ -1,7 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-
 const createNewEmployee = async (req, res) => {
     const {
         pharmacy_id,
@@ -116,7 +115,22 @@ const getAllEmployee = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
+
+const getDeleteEmployeeInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT 
+        count(distinct deliveries.id) as deliveries
+        from employee
+        left join deliveries on employee.id = deliveries.employee_id
+        where employee.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 
 const employeeMethods = {
@@ -125,7 +139,8 @@ const employeeMethods = {
     createNewEmployee,
     updateEmployee,
     getCurrentEmployee,
-    getAllEmployee
+    getAllEmployee,
+    getDeleteEmployeeInfo
 }
 
 module.exports = employeeMethods

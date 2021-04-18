@@ -115,7 +115,24 @@ const getAllManufacturerFirm = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
+
+const getDeleteManufacturerFirmInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT 
+        count(distinct medicine.id) as medicine,
+        count(distinct deliveries.id) as deliveries
+        from manufacturer_firm
+        left join medicine on manufacturer_firm.id = medicine.manufacture_firm_id
+        left join deliveries on medicine.id = deliveries.medicine_id
+        where manufacturer_firm.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 
 const manufacturerFirmMethods = {
@@ -125,6 +142,7 @@ const manufacturerFirmMethods = {
     updateManufacturerFirm,
     getCurrentManufacturerFirm,
     getAllManufacturerFirm,
+    getDeleteManufacturerFirmInfo
 }
 
 module.exports = manufacturerFirmMethods

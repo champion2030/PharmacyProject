@@ -21,6 +21,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentPharmacy);
 
+    app.get("/api/deletePharmacyInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeletePharmacyInfo);
+
     app.delete("/api/deletePharmacy/:id",
         //[authJwt.verifyToken],
         controller.deletePharmacy);

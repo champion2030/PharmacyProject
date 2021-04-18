@@ -18,6 +18,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getCurrentReasonForReturn);
 
+    app.get("/api/deleteReasonForReturnInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteReasonForReturnInfo);
+
     app.delete("/api/deleteReasonForReturn/:id",
         //[authJwt.verifyToken],
         controller.deleteReasonForReturn);

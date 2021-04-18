@@ -59,15 +59,32 @@ const getCurrentFormOfIssue = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
 
+const getDeleteFormOfIssueInfo = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`select 
+        count(distinct medicine.id) as medicine,
+        count(distinct deliveries.id) as deliveries
+        from form_of_issue
+        left join medicine on form_of_issue.id = medicine.form_of_issue_id
+        left join deliveries on medicine.id = deliveries.medicine_id
+        where form_of_issue.id = $1`, [id])
+        return res.json(Query.rows[0])
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 const formOfIssueMethods = {
     getFormOfIssues,
     deleteFormOfIssue,
     createNewForm,
     updateFormOfIssue,
-    getCurrentFormOfIssue
+    getCurrentFormOfIssue,
+    getDeleteFormOfIssueInfo
 }
 
 module.exports = formOfIssueMethods

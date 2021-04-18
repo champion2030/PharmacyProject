@@ -22,6 +22,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getAllManufacturerFirm);
 
+    app.get("/api/deleteManufacturerFirmInfo/:id",
+        //[authJwt.verifyToken],
+        controller.getDeleteManufacturerFirmInfo);
+
     app.delete("/api/deleteManufacturerFirm/:id",
         //[authJwt.verifyToken],
         controller.deleteManufacturerFirm);
