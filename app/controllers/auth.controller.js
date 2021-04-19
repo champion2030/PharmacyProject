@@ -3,7 +3,7 @@ const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
 exports.signup = async (req, res) => {
-    const {username, email, password,} = req.body;
+    const {username, email, password} = req.body;
     const hashedPassword = hashPassword(password);
     const createUserQuery = `INSERT INTO users(username, email, password) VALUES($1, $2, $3) returning *`;
     const values = [
@@ -24,7 +24,11 @@ exports.signup = async (req, res) => {
 }
 
 exports.signin = async (req, res) => {
-    const {username, password,} = req.body;
+    const {username, password} = req.body;
+    if (username === "" || password === ""){
+        errorMessage.error = 'Поля не могут быть пустыми';
+        return res.status(status.notfound).send(errorMessage);
+    }
     const signinUserQuery = 'SELECT * FROM users WHERE username = $1';
     try {
         const person = await pool.query(signinUserQuery, [username]);

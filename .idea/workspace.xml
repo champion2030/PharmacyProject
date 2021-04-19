@@ -26,33 +26,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="Generation improved, requests fixed">
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All tables with with a delete warning request">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/area.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/area.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/countryOfManufacture.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/countryOfManufacture.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/employee.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employee.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/formOfIssue.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/medicine.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicine.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacologicalGroup.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacologicalGroup.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacyName.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/reasonForReturn.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/reasonForReturn.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/typeOfProperty.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/typeOfProperty.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/deliveries/deliveries-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/deliveries/deliveries-generation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/medicine/medicine-generation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/area.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/area.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/employee.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/employee.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/medicine.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/medicine.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/middlewares/verifySignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifySignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,6 +211,9 @@
       <workItem from="1618589841608" duration="14558000" />
       <workItem from="1618656226972" duration="28174000" />
       <workItem from="1618736470165" duration="17001000" />
+      <workItem from="1618771329605" duration="1879000" />
+      <workItem from="1618821311539" duration="4947000" />
+      <workItem from="1618838831444" duration="8605000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -479,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618605567370</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="All tables with with a delete warning request">
+      <created>1618771476202</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1618771476202</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,6 +514,7 @@
     <MESSAGE value="All tables, methods and other" />
     <MESSAGE value="Hard forms done" />
     <MESSAGE value="Generation improved, requests fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generation improved, requests fixed" />
+    <MESSAGE value="All tables with with a delete warning request" />
+    <option name="LAST_COMMIT_MESSAGE" value="All tables with with a delete warning request" />
   </component>
 </project>
