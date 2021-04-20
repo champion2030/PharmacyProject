@@ -139,6 +139,18 @@ const getDeleteEmployeeInfo = async (req, res) => {
     }
 }
 
+const getEmployeeForCurrentPharmacy = async (req, res) => {
+    const id = req.params.id
+    try {
+        const Query = await pool.query(`SELECT employee.id, (employee.name || ' ' || employee.surname || ' ' || employee.patronymic) AS full_name FROM employee
+ where employee.pharmacy_id = $1`, [id])
+        return res.json(Query.rows)
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 
 const employeeMethods = {
     getEmployee,
@@ -147,7 +159,8 @@ const employeeMethods = {
     updateEmployee,
     getCurrentEmployee,
     getAllEmployee,
-    getDeleteEmployeeInfo
+    getDeleteEmployeeInfo,
+    getEmployeeForCurrentPharmacy
 }
 
 module.exports = employeeMethods
