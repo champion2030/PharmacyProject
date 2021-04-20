@@ -34,15 +34,17 @@ JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id OR
 FROM medicine
 JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id
 JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id
-JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.medicine_name LIKE $1 ORDER BY medicine.id LIMIT $2 OFFSET $3`;
+JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id WHERE medicine.medicine_name ILIKE $1 OR manufacturer_firm.firm_name ILIKE $2 
+ORDER BY medicine.id LIMIT $3 OFFSET $4`;
     try {
         if (searchQuery === "default") {
             medicines = await pool.query(Query, [limit, (page - 1) * limit])
             count = await pool.query(`SELECT COUNT(*) FROM medicine`)
             medicines = medicines.rows
         } else {
-            medicines = await pool.query(QueryWithParams, [searchQuery + "%", limit, (page - 1) * limit])
-            count = await pool.query(`SELECT COUNT(*) FROM medicine WHERE medicine_name LIKE $1`, [searchQuery + "%"])
+            medicines = await pool.query(QueryWithParams, [searchQuery + "%", searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM medicine JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id
+ WHERE medicine.medicine_name ILIKE $1 OR manufacturer_firm.firm_name ILIKE $2`, [searchQuery + "%", searchQuery + "%"])
             medicines = medicines.rows
         }
         return res.json({

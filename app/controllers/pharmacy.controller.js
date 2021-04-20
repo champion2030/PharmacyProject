@@ -52,15 +52,18 @@ const getPharmacy = async (req, res) => {
     FROM pharmacy
     JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
     JOIN area ON pharmacy.area_id = area.id
-    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy_name.name LIKE $1 ORDER BY pharmacy.id LIMIT $2 OFFSET $3`
+    JOIN type_of_property ON pharmacy.type_of_property_id = type_of_property.id WHERE pharmacy_name.name ILIKE $1 OR area.name_of_area ILIKE $2 ORDER BY pharmacy.id LIMIT $3 OFFSET $4`
     try {
         if (searchQuery === "default") {
             pharmacies = await pool.query(Query, [limit, (page - 1) * limit])
             count = await pool.query(`SELECT COUNT(*) FROM pharmacy`)
             pharmacies = pharmacies.rows
         } else {
-            pharmacies = await pool.query(QueryWithParams, [searchQuery + "%", limit, (page - 1) * limit])
-            count = await pool.query(`SELECT COUNT(*) FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy_name.name LIKE $1`, [searchQuery + "%"])
+            pharmacies = await pool.query(QueryWithParams, [searchQuery + "%", searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM pharmacy 
+JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id 
+JOIN area ON pharmacy.area_id = area.id
+WHERE pharmacy_name.name ILIKE $1 OR area.name_of_area ILIKE $2`, [searchQuery + "%", searchQuery + "%"])
             pharmacies = pharmacies.rows
         }
         return res.json({

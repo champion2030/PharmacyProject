@@ -19,21 +19,32 @@ const createNewDeliver = async (req, res) => {
     const values = [medicine_id, employee_id, cause_id, receipt_date, number_of_packages, presence_of_defect, supplier_price, pharmacy_price,
         expiry_start_date, expiration_date];
     try {
-        if (medicine_id === "" || employee_id === "" || number_of_packages === "" || supplier_price === "" || pharmacy_price === "") {
-            errorMessage.error = 'Fields can not be empty';
+        if (medicine_id === "" || employee_id === "" || number_of_packages === undefined || supplier_price === undefined || pharmacy_price === undefined) {
+            errorMessage.error = 'Поля не могут быть пустыми';
             return res.status(status.conflict).send(errorMessage);
         } else {
-            if (expiry_start_date >= expiration_date) {
-                errorMessage.error = 'Expiry start date can not be less then expiration date';
+            if (number_of_packages <= 0 || supplier_price <= 0 || pharmacy_price <= 0) {
+                errorMessage.error = 'Цена или количество упаковок не могут быть отрицательными';
                 return res.status(status.conflict).send(errorMessage);
             } else {
-                if (receipt_date < expiry_start_date) {
-                    errorMessage.error = 'Receipt date can not be less then expiry start date';
+                const date = new Date()
+                if (new Date(receipt_date) > date || new Date(expiry_start_date) > date) {
+                    errorMessage.error = 'Дата начала срока годности или дата поставки не может быть больше чем сегодняшняя дата';
                     return res.status(status.conflict).send(errorMessage);
                 } else {
-                    const newDeliver = await pool.query(Query, values);
-                    successMessage.data = newDeliver.rows[0];
-                    return res.status(status.created).send(successMessage);
+                    if (expiry_start_date >= expiration_date) {
+                        errorMessage.error = 'Дата начала срока годности не может быть меньше или равна дате конца срока годности';
+                        return res.status(status.conflict).send(errorMessage);
+                    } else {
+                        if (receipt_date < expiry_start_date) {
+                            errorMessage.error = 'Дата поставки не может быть меньше чем начало срока годности';
+                            return res.status(status.conflict).send(errorMessage);
+                        } else {
+                            const newDeliver = await pool.query(Query, values);
+                            successMessage.data = newDeliver.rows[0];
+                            return res.status(status.created).send(successMessage);
+                        }
+                    }
                 }
             }
         }
@@ -58,7 +69,7 @@ const getDeliveries = async (req, res) => {
     FROM deliveries
     JOIN medicine ON deliveries.medicine_id = medicine.id
     JOIN employee ON deliveries.employee_id = employee.id
-    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id WHERE medicine.medicine_name LIKE $1 OR employee.name LIKE $2 ORDER BY deliveries.id LIMIT $3 OFFSET $4`
+    LEFT JOIN reason_for_return ON deliveries.cause_id = reason_for_return.id WHERE medicine.medicine_name ILIKE $1 OR employee.name ILIKE $2 ORDER BY deliveries.id LIMIT $3 OFFSET $4`
     try {
         if (searchQuery === "default") {
             deliveries = await pool.query(Query, [limit, (page - 1) * limit])
@@ -69,7 +80,7 @@ const getDeliveries = async (req, res) => {
             count = await pool.query(`SELECT COUNT(*) FROM deliveries 
                 JOIN medicine ON deliveries.medicine_id = medicine.id
                 JOIN employee ON deliveries.employee_id = employee.id
-                WHERE medicine.medicine_name LIKE $1 OR employee.name LIKE $2`, [searchQuery + "%", searchQuery + "%"])
+                WHERE medicine.medicine_name ILIKE $1 OR employee.name ILIKE $2`, [searchQuery + "%", searchQuery + "%"])
             deliveries = deliveries.rows
         }
         return res.json({
@@ -111,28 +122,39 @@ const updateDeliver = async (req, res) => {
     } = req.body;
     try {
         if (medicine_id === "" || employee_id === "" || number_of_packages === "" || supplier_price === "" || pharmacy_price === "") {
-            errorMessage.error = 'Fields can not be empty';
+            errorMessage.error = 'Поля не могут быть пустыми';
             return res.status(status.conflict).send(errorMessage);
         } else {
-            if (expiry_start_date >= expiration_date) {
-                errorMessage.error = 'Expiry start date can not be less then expiration date';
+            if (number_of_packages <= 0 || supplier_price <= 0 || pharmacy_price <= 0) {
+                errorMessage.error = 'Цена или количество упаковок не могут быть отрицательными';
                 return res.status(status.conflict).send(errorMessage);
             } else {
-                if (receipt_date < expiry_start_date) {
-                    errorMessage.error = 'Receipt date can not be less then expiry start date';
+                const date = new Date()
+                if (new Date(receipt_date) > date || new Date(expiry_start_date) > date) {
+                    errorMessage.error = 'Дата начала срока годности или дата поставки не может быть больше чем сегодняшняя дата';
                     return res.status(status.conflict).send(errorMessage);
                 } else {
-                    const Query = await pool.query(`UPDATE deliveries SET medicine_id = $1, employee_id = $2, cause_id = $3, receipt_date = $4, number_of_packages = $5,
+                    if (expiry_start_date >= expiration_date) {
+                        errorMessage.error = 'Дата начала срока годности не может быть меньше или равна дате конца срока годности';
+                        return res.status(status.conflict).send(errorMessage);
+                    } else {
+                        if (receipt_date < expiry_start_date) {
+                            errorMessage.error = 'Дата поставки не может быть меньше чем начало срока годности';
+                            return res.status(status.conflict).send(errorMessage);
+                        } else {
+                            const Query = await pool.query(`UPDATE deliveries SET medicine_id = $1, employee_id = $2, cause_id = $3, receipt_date = $4, number_of_packages = $5,
  presence_of_defect = $6, supplier_price = $7, pharmacy_price = $8, expiry_start_date = $9, expiration_date = $10 WHERE id = $11`, [medicine_id, employee_id, cause_id,
-                        receipt_date,
-                        number_of_packages,
-                        presence_of_defect,
-                        supplier_price,
-                        pharmacy_price,
-                        expiry_start_date,
-                        expiration_date,
-                        id])
-                    return res.json(Query.rows[0])
+                                receipt_date,
+                                number_of_packages,
+                                presence_of_defect,
+                                supplier_price,
+                                pharmacy_price,
+                                expiry_start_date,
+                                expiration_date,
+                                id])
+                            return res.json(Query.rows[0])
+                        }
+                    }
                 }
             }
         }

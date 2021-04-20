@@ -35,15 +35,22 @@ JOIN pharmacy ON employee.pharmacy_id = pharmacy.id ORDER BY employee.id LIMIT $
     const QueryWithParams = `SELECT employee.id, employee.pharmacy_id, (SELECT pharmacy_name.name FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy.id = employee.pharmacy_id) AS pharmacy_name, 
 employee.name, employee.surname, employee.patronymic
 FROM employee
-JOIN pharmacy ON employee.pharmacy_id = pharmacy.id WHERE employee.name LIKE $1 OR employee.surname LIKE $2 ORDER BY employee.id LIMIT $3 OFFSET $4`;
+JOIN pharmacy ON employee.pharmacy_id = pharmacy.id
+JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
+WHERE employee.name ILIKE $1 OR employee.surname ILIKE $2 OR pharmacy_name.name ILIKE $3 ORDER BY employee.id LIMIT $4 OFFSET $5`;
     try {
         if (searchQuery === "default") {
             employees = await pool.query(Query, [limit, (page - 1) * limit])
             count = await pool.query(`SELECT COUNT(*) FROM employee;`)
             employees = employees.rows
         } else {
-            employees = await pool.query(QueryWithParams, [searchQuery + "%", searchQuery + "%", limit, (page - 1) * limit])
-            count = await pool.query(`SELECT COUNT(*) FROM employee WHERE employee.name LIKE $1 OR employee.surname LIKE $2`, [searchQuery + "%", searchQuery + "%"])
+            employees = await pool.query(QueryWithParams, [searchQuery + "%", searchQuery + "%", searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`select count(*) from (SELECT employee.id, employee.pharmacy_id, (SELECT pharmacy_name.name FROM pharmacy JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id WHERE pharmacy.id = employee.pharmacy_id) AS pharmacy_name, 
+employee.name, employee.surname, employee.patronymic
+FROM employee
+JOIN pharmacy ON employee.pharmacy_id = pharmacy.id
+JOIN pharmacy_name ON pharmacy.name_id = pharmacy_name.id
+WHERE employee.name ILIKE $1 OR employee.surname ILIKE $2 OR pharmacy_name.name ILIKE $3 ORDER BY employee.id) as i`, [searchQuery + "%", searchQuery + "%", searchQuery + "%"])
             employees = employees.rows
         }
         return res.json({

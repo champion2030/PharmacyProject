@@ -13,13 +13,17 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.getFirstRequestPartOne);
 
-    app.post("/api/firstRequestPartTwo",
+    app.get("/api/firstRequestPartTwo",
         //[authJwt.verifyToken],
         controller.getFirstRequestPartTwo);
 
-    app.get("/api/secondRequest",
+    app.get("/api/secondRequestFirstPart",
         //[authJwt.verifyToken],
-        controller.getSecondRequest);
+        controller.getSecondRequestFirstPart);
+
+    app.get("/api/secondRequestSecondPart",
+        //[authJwt.verifyToken],
+        controller.getSecondRequestSecondPart);
 
     app.get("/api/thirdRequest",
         //[authJwt.verifyToken],

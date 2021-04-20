@@ -15,7 +15,7 @@ group by medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmac
 order by count(*) desc
 limit 5
 
---Топ 5 лекарств поставляемых по конкретному району
+--Топ 5 лекарств поставляемых по всему городу
 
 select medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group,
 manufacturer_firm.firm_name, medicine.medicine_name, medicine.instruction, medicine.barcode, count(*)
@@ -27,7 +27,6 @@ left join deliveries on deliveries.medicine_id = medicine.id
 left join employee on deliveries.employee_id = employee.id
 left join pharmacy on employee.pharmacy_id = pharmacy.id
 left join area on pharmacy.area_id = area.id
-where area.id = 1
 group by medicine.id, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name
 order by count(*) desc
 limit 5
