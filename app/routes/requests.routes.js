@@ -28,4 +28,12 @@ module.exports = (app) => {
     app.get("/api/thirdRequest",
         //[authJwt.verifyToken],
         controller.getThirdRequest);
+
+    app.post("/api/dateFirstRequest",
+        //[authJwt.verifyToken],
+        controller.dateFirstRequest);
+
+    app.post("/api/dateSecondRequest",
+        //[authJwt.verifyToken],
+        controller.dateSecondRequest);
 };

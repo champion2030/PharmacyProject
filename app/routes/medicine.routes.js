@@ -30,6 +30,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.deleteMedicine);
 
+    app.delete("/api/deleteGroupOfMedicine",
+        //[authJwt.verifyToken],
+        controller.deleteGroupOfMedicine);
+
     app.post("/api/createMedicine",
         [verifyMedicine.checkDuplicateMedicine],
         controller.createNewMedicine);

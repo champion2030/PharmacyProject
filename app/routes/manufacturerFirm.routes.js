@@ -30,6 +30,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.deleteManufacturerFirm);
 
+    app.delete("/api/deleteGroupOfFirms",
+        //[authJwt.verifyToken],
+        controller.deleteGroupOfFirms);
+
     app.post("/api/createManufacturerFirm",
         [verifyManufacturerFirm.checkDuplicateManufacturerFirm],
         controller.createNewManufacturerFirm);

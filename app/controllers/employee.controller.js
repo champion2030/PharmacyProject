@@ -151,6 +151,17 @@ const getEmployeeForCurrentPharmacy = async (req, res) => {
     }
 }
 
+const deleteGroupOfEmployee = async (req, res) => {
+    const {employeeId} = req.body
+    try {
+        await pool.query(`delete from employee where id=ANY($1)`, [employeeId])
+        return res.status(status.success).send(successMessage);
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 
 const employeeMethods = {
     getEmployee,
@@ -160,7 +171,8 @@ const employeeMethods = {
     getCurrentEmployee,
     getAllEmployee,
     getDeleteEmployeeInfo,
-    getEmployeeForCurrentPharmacy
+    getEmployeeForCurrentPharmacy,
+    deleteGroupOfEmployee
 }
 
 module.exports = employeeMethods

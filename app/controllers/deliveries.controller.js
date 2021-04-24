@@ -199,7 +199,18 @@ const getDeliversForCurrentPharmacy = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
+
+const deleteGroupOfDelivers = async (req, res) => {
+    const {deliversId} = req.body
+    try {
+        await pool.query(`delete from deliveries where id=ANY($1)`, [deliversId])
+        return res.status(status.success).send(successMessage);
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
 
 const deliverMethods = {
     getDeliveries,
@@ -207,7 +218,8 @@ const deliverMethods = {
     createNewDeliver,
     updateDeliver,
     getCurrentDeliver,
-    getDeliversForCurrentPharmacy
+    getDeliversForCurrentPharmacy,
+    deleteGroupOfDelivers
 }
 
 module.exports = deliverMethods

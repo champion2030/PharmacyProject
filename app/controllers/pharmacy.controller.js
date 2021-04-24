@@ -172,6 +172,17 @@ const getDeletePharmacyInfo = async (req, res) => {
     }
 }
 
+const deleteGroupOfPharmacy = async (req, res) => {
+    const {pharmacyId} = req.body
+    try {
+        await pool.query(`delete from pharmacy where id=ANY($1)`, [pharmacyId])
+        return res.status(status.success).send(successMessage);
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 const pharmacyMethods = {
     getPharmacy,
     deletePharmacy,
@@ -179,7 +190,8 @@ const pharmacyMethods = {
     updatePharmacy,
     getCurrentPharmacy,
     getAllPharmacy,
-    getDeletePharmacyInfo
+    getDeletePharmacyInfo,
+    deleteGroupOfPharmacy
 }
 
 module.exports = pharmacyMethods

@@ -33,6 +33,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.deleteEmployee);
 
+    app.delete("/api/deleteGroupOfEmployee",
+        //[authJwt.verifyToken],
+        controller.deleteGroupOfEmployee);
+
     app.post("/api/createEmployee",
         //[authJwt.verifyToken],
         controller.createNewEmployee);

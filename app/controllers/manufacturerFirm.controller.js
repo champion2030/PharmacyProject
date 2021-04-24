@@ -67,7 +67,7 @@ const deleteManufacturerFirm = async (req, res) => {
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
-};
+}
 
 const updateManufacturerFirm = async (req, res) => {
     const id = req.params.id
@@ -93,7 +93,8 @@ const updateManufacturerFirm = async (req, res) => {
 const getCurrentManufacturerFirm = async (req, res) => {
     const id = req.params.id
     try {
-        const manufacturerFirm = await pool.query(`SELECT manufacturer_firm.id, manufacturer_firm.country_of_manufacture_id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+        const manufacturerFirm = await pool.query(`SELECT manufacturer_firm.id, manufacturer_firm.country_of_manufacture_id, 
+    country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
     FROM manufacturer_firm
     JOIN country_of_manufacture
     ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE manufacturer_firm.id = $1`, [id])
@@ -134,6 +135,17 @@ const getDeleteManufacturerFirmInfo = async (req, res) => {
     }
 }
 
+const deleteGroupOfFirms = async (req, res) => {
+    const {firmsId} = req.body
+    try {
+        await pool.query(`delete from manufacturer_firm where id=ANY($1)`, [firmsId])
+        return res.status(status.success).send(successMessage);
+    } catch (error) {
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 
 const manufacturerFirmMethods = {
     getManufacturerFirm,
@@ -142,7 +154,8 @@ const manufacturerFirmMethods = {
     updateManufacturerFirm,
     getCurrentManufacturerFirm,
     getAllManufacturerFirm,
-    getDeleteManufacturerFirmInfo
+    getDeleteManufacturerFirmInfo,
+    deleteGroupOfFirms
 }
 
 module.exports = manufacturerFirmMethods

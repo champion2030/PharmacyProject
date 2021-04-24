@@ -25,6 +25,10 @@ module.exports = (app) => {
         //[authJwt.verifyToken],
         controller.deleteDeliver);
 
+    app.delete("/api/deleteGroupOfDelivers",
+        //[authJwt.verifyToken],
+        controller.deleteGroupOfDelivers);
+
     app.post("/api/createDeliver",
         controller.createNewDeliver);
 

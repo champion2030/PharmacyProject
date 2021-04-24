@@ -156,13 +156,66 @@ order by count(*) desc) as i`, [searchQuery + "%"])
     }
 }
 
+const dateFirstRequest = async (req, res) => {
+    const {page = 1, limit = 5} = req.query;
+    const {date} = req.body;
+    const Query = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE year_open < $1 ORDER BY manufacturer_firm.id LIMIT $2 OFFSET $3`;
+    try {
+        let requestResult = await pool.query(Query, [date, limit, (page - 1) * limit])
+        const count = await pool.query(`select count(*) from (SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id where year_open < $1 ORDER BY manufacturer_firm.id) as i`, [date])
+        return res.json({
+            requestResult: requestResult.rows,
+            totalPages: Math.ceil(count.rows[0].count / limit),
+            currentPage: page,
+            totalCount: parseInt(count.rows[0].count)
+        })
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
+const dateSecondRequest = async (req, res) => {
+    const {page = 1, limit = 5} = req.query;
+    const {date} = req.body;
+    const Query = `SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id WHERE year_open >= $1 ORDER BY manufacturer_firm.id LIMIT $2 OFFSET $3`;
+    try {
+        let requestResult = await pool.query(Query, [date, limit, (page - 1) * limit])
+        const count = await pool.query(`select count(*) from (SELECT manufacturer_firm.id, country_of_manufacture.country, manufacturer_firm.firm_name, manufacturer_firm.email, manufacturer_firm.address, manufacturer_firm.year_open
+    FROM manufacturer_firm
+    JOIN country_of_manufacture
+    ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id where year_open >= $1 ORDER BY manufacturer_firm.id) as i`, [date])
+        return res.json({
+            requestResult: requestResult.rows,
+            totalPages: Math.ceil(count.rows[0].count / limit),
+            currentPage: page,
+            totalCount: parseInt(count.rows[0].count)
+        })
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 const requestsMethods = {
     getFirstRequestPartOne,
     getFirstRequestPartTwo,
     getSecondRequestFirstPart,
     getSecondRequestSecondPart,
-    getThirdRequest
+    getThirdRequest,
+    dateFirstRequest,
+    dateSecondRequest
 }
-
 
 module.exports = requestsMethods
