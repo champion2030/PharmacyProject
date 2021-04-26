@@ -26,22 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="request for hard form is done">
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/deliveries.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/employee.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/employee.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/manufacturerFirm.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/medicine.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/medicine.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/pharmacy.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/requests.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/requests.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyFormOfIssue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middlewares/verifyManufacturerFirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifyManufacturerFirm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/deliveries.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/deliveries.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/employee.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/employee.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/medicine.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/medicine.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/requests.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/requests.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/user.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/tablesGeneration.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/tablesGeneration.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +219,10 @@
       <workItem from="1619115932476" duration="1224000" />
       <workItem from="1619168022605" duration="3913000" />
       <workItem from="1619193061908" duration="6688000" />
-      <workItem from="1619260265871" duration="12517000" />
+      <workItem from="1619260265871" duration="12636000" />
+      <workItem from="1619296367396" duration="711000" />
+      <workItem from="1619339223841" duration="1446000" />
+      <workItem from="1619447468358" duration="5258000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -506,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618954606120</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="All done">
+      <created>1619289784284</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1619289784284</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,6 +554,7 @@
     <MESSAGE value="All tables with with a delete warning request" />
     <MESSAGE value="Validation data made" />
     <MESSAGE value="request for hard form is done" />
-    <option name="LAST_COMMIT_MESSAGE" value="request for hard form is done" />
+    <MESSAGE value="All done" />
+    <option name="LAST_COMMIT_MESSAGE" value="All done" />
   </component>
 </project>

@@ -16,15 +16,14 @@ const deleteUser = async (req, res) => {
 const paginatedUsers = async (req, res) => {
     const {page = 1, limit = 10, searchQuery = "default"} = req.query;
     let users, count
-
     try {
         if (searchQuery === "default") {
-            users = await pool.query(`SELECT * FROM users LIMIT $1 OFFSET $2`, [limit, (page - 1) * limit])
+            users = await pool.query(`SELECT * FROM users order by id LIMIT $1 OFFSET $2`, [limit, (page - 1) * limit])
             count = await pool.query(`SELECT COUNT(*) FROM users`)
             users = users.rows
         } else {
-            users = await pool.query(`SELECT * FROM users WHERE username LIKE $1 LIMIT $2 OFFSET $3`, [searchQuery + "%",limit, (page - 1) * limit])
-            count = await pool.query(`SELECT COUNT(*) FROM users WHERE username LIKE $1`, [searchQuery + "%"])
+            users = await pool.query(`SELECT * FROM users WHERE username ILIKE $1 order by id LIMIT $2 OFFSET $3`, [searchQuery + "%", limit, (page - 1) * limit])
+            count = await pool.query(`SELECT COUNT(*) FROM users WHERE username ILIKE $1`, [searchQuery + "%"])
             users = users.rows
         }
         res.json({

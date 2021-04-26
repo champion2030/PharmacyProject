@@ -50,5 +50,4 @@ const fullGeneration = async (numberOfPharmacy) => {
 
 }
 
-
 fullGeneration(300)
