@@ -1,7 +1,6 @@
 const pool = require('../db/dev/pool.js')
 const {errorMessage, status, successMessage} = require('../helpers/status.js')
 
-
 const createNewTypeOfProperty = async (req, res) => {
     const {name_of_property} = req.body;
     const Query = `INSERT INTO type_of_property(name_of_property) VALUES($1) RETURNING *`;
