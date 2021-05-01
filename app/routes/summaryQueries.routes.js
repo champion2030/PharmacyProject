@@ -16,4 +16,8 @@ module.exports = (app) => {
     app.get("/api/queryWithConditionForGroups",
         //[authJwt.verifyToken],
         controller.queryWithConditionForGroups);
+
+    app.post("/api/finalQueryWithDataAndGroup",
+        //[authJwt.verifyToken],
+        controller.getFinalQueryWithDataAndGroups);
 };
