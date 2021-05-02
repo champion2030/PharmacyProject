@@ -1,4 +1,5 @@
 const controller = require("../controllers/deliveries.controller.js");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -9,29 +10,17 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getDeliveries",
-        //[authJwt.verifyToken],
-        controller.getDeliveries);
+    app.get("/api/getDeliveries", [authJwt.verifyToken], controller.getDeliveries);
 
-    app.get("/api/getCurrentDeliver/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentDeliver);
+    app.get("/api/getCurrentDeliver/:id", [authJwt.verifyToken], controller.getCurrentDeliver);
 
-    app.get("/api/getDeliveriesForCurrentPharmacy/:id",
-        //[authJwt.verifyToken],
-        controller.getDeliversForCurrentPharmacy);
+    app.get("/api/getDeliveriesForCurrentPharmacy/:id", [authJwt.verifyToken], controller.getDeliversForCurrentPharmacy);
 
-    app.delete("/api/deleteDeliver/:id",
-        //[authJwt.verifyToken],
-        controller.deleteDeliver);
+    app.delete("/api/deleteDeliver/:id", [authJwt.verifyToken], controller.deleteDeliver);
 
-    app.delete("/api/deleteGroupOfDelivers",
-        //[authJwt.verifyToken],
-        controller.deleteGroupOfDelivers);
+    app.delete("/api/deleteGroupOfDelivers", [authJwt.verifyToken], controller.deleteGroupOfDelivers);
 
-    app.post("/api/createDeliver",
-        controller.createNewDeliver);
+    app.post("/api/createDeliver", [authJwt.verifyToken], controller.createNewDeliver);
 
-    app.put("/api/updateDeliver/:id",
-        controller.updateDeliver);
+    app.put("/api/updateDeliver/:id", [authJwt.verifyToken], controller.updateDeliver);
 };

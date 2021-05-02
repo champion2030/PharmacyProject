@@ -1,5 +1,6 @@
 const controller = require("../controllers/area.controller.js");
 const verifyArea = require("../middlewares/verifyArea.js");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -10,27 +11,15 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getArea",
-        //[authJwt.verifyToken],
-        controller.getArea);
+    app.get("/api/getArea", [authJwt.verifyToken], controller.getArea);
 
-    app.get("/api/getCurrentArea/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentArea);
+    app.get("/api/getCurrentArea/:id", [authJwt.verifyToken], controller.getCurrentArea);
 
-    app.get("/api/deleteAreaInfo/:id",
-        //[authJwt.verifyToken],
-        controller.getDeleteAreaInfo);
+    app.get("/api/deleteAreaInfo/:id", [authJwt.verifyToken], controller.getDeleteAreaInfo);
 
-    app.delete("/api/deleteArea/:id",
-        //[authJwt.verifyToken],
-        controller.deleteArea);
+    app.delete("/api/deleteArea/:id", [authJwt.verifyToken], controller.deleteArea);
 
-    app.post("/api/createArea",
-        [verifyArea.checkDuplicateArea],
-        controller.createNewArea);
+    app.post("/api/createArea", [authJwt.verifyToken, verifyArea.checkDuplicateArea], controller.createNewArea);
 
-    app.put("/api/updateArea/:id",
-        [verifyArea.checkDuplicateAreaOnUpdate],
-        controller.updateArea);
+    app.put("/api/updateArea/:id", [authJwt.verifyToken, verifyArea.checkDuplicateAreaOnUpdate], controller.updateArea);
 };

@@ -120,6 +120,14 @@ CREATE TABLE "reason_for_return" (
   OIDS=FALSE
 );
 
+CREATE TABLE users
+(
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    email VARCHAR(30) UNIQUE NOT NULL,
+	password VARCHAR(100) NOT NULL
+);
+
 ALTER TABLE "pharmacy" ADD CONSTRAINT "pharmacy_fk0" FOREIGN KEY ("name_id") REFERENCES "pharmacy_name"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "pharmacy" ADD CONSTRAINT "pharmacy_fk1" FOREIGN KEY ("area_id") REFERENCES "area"("id") ON UPDATE CASCADE ON DELETE CASCADE;
 ALTER TABLE "pharmacy" ADD CONSTRAINT "pharmacy_fk2" FOREIGN KEY ("type_of_property_id") REFERENCES "type_of_property"("id") ON UPDATE CASCADE ON DELETE CASCADE;

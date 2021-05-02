@@ -1,5 +1,6 @@
 const controller = require("../controllers/typeOfProperty.controller.js");
 const verifyTypeOfProperty = require("../middlewares/verifyTypeOfProperty");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -10,27 +11,15 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getTypeOfProperty",
-        //[authJwt.verifyToken],
-        controller.getTypeOfProperty);
+    app.get("/api/getTypeOfProperty", [authJwt.verifyToken], controller.getTypeOfProperty);
 
-    app.get("/api/getCurrentTypeOfProperty/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentTypeOfProperty);
+    app.get("/api/getCurrentTypeOfProperty/:id", [authJwt.verifyToken], controller.getCurrentTypeOfProperty);
 
-    app.get("/api/deleteTypeOfPropertyInfo/:id",
-        //[authJwt.verifyToken],
-        controller.getDeleteTypeOfPropertyInfo);
+    app.get("/api/deleteTypeOfPropertyInfo/:id", [authJwt.verifyToken], controller.getDeleteTypeOfPropertyInfo);
 
-    app.delete("/api/deleteTypeOfProperty/:id",
-        //[authJwt.verifyToken],
-        controller.deleteTypeOfProperty);
+    app.delete("/api/deleteTypeOfProperty/:id", [authJwt.verifyToken], controller.deleteTypeOfProperty);
 
-    app.post("/api/createTypeOfProperty",
-        [verifyTypeOfProperty.checkDuplicateTypeOfProperty],
-        controller.createNewTypeOfProperty);
+    app.post("/api/createTypeOfProperty", [authJwt.verifyToken, verifyTypeOfProperty.checkDuplicateTypeOfProperty], controller.createNewTypeOfProperty);
 
-    app.put("/api/updateTypeOfProperty/:id",
-        [verifyTypeOfProperty.checkDuplicateTypeOfPropertyOnUpdate],
-        controller.updateTypeOfProperty);
+    app.put("/api/updateTypeOfProperty/:id", [authJwt.verifyToken, verifyTypeOfProperty.checkDuplicateTypeOfPropertyOnUpdate], controller.updateTypeOfProperty);
 };

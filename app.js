@@ -5,21 +5,10 @@ const app = express()
 const http = require('http').createServer(app)
 require('dotenv').config()
 
-const corsOptions = {
-  origin: 'http://localhost:8081'
-}
-
-
-//app.use(cors(corsOptions))
 app.use(cors())
 
-
-
-// parse requests of content-type - application/json
 app.use(bodyParser.json())
 
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
 
 require('./app/routes/auth.routes')(app)
@@ -38,8 +27,6 @@ require('./app/routes/medicine.routes')(app)
 require('./app/routes/deliveries.routes')(app)
 require('./app/routes/requests.routes')(app)
 require('./app/routes/summaryQueries.routes')(app)
-
-
 
 PORT = 8080
 http.listen(PORT, () => {

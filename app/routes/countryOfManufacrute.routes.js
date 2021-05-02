@@ -1,5 +1,6 @@
 const controller = require("../controllers/countryOfManufacture.controller.js");
 const verifyCountry = require("../middlewares/verifyCountryOfManufacture");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -10,27 +11,15 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getCountryOfManufacture",
-        //[authJwt.verifyToken],
-        controller.getCountry);
+    app.get("/api/getCountryOfManufacture", [authJwt.verifyToken], controller.getCountry);
 
-    app.get("/api/getCurrentCountryOfManufacture/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentCountry)
+    app.get("/api/getCurrentCountryOfManufacture/:id", [authJwt.verifyToken], controller.getCurrentCountry)
 
-    app.get("/api/deleteCountryOfManufactureInfo/:id",
-        //[authJwt.verifyToken],
-        controller.getDeleteCountryInfo)
+    app.get("/api/deleteCountryOfManufactureInfo/:id", [authJwt.verifyToken], controller.getDeleteCountryInfo)
 
-    app.delete("/api/deleteCountryOfManufacture/:id",
-        //[authJwt.verifyToken],
-        controller.deleteCountry);
+    app.delete("/api/deleteCountryOfManufacture/:id", [authJwt.verifyToken], controller.deleteCountry);
 
-    app.post("/api/createCountryOfManufacture",
-        [verifyCountry.checkDuplicateCountry],
-        controller.createNewCountry);
+    app.post("/api/createCountryOfManufacture", [authJwt.verifyToken, verifyCountry.checkDuplicateCountry], controller.createNewCountry);
 
-    app.put("/api/updateCountryOfManufacture/:id",
-        [verifyCountry.checkDuplicateCountryOnUpdate],
-        controller.updateCountry);
+    app.put("/api/updateCountryOfManufacture/:id", [authJwt.verifyToken, verifyCountry.checkDuplicateCountryOnUpdate], controller.updateCountry);
 };

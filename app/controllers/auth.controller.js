@@ -18,6 +18,7 @@ exports.signup = async (req, res) => {
         successMessage.data = dbResponse;
         return res.status(status.created).send(successMessage);
     } catch (error) {
+        console.log(error)
         errorMessage.error = 'Operation was not successful';
         return res.status(status.error).send(errorMessage);
     }
@@ -34,11 +35,11 @@ exports.signin = async (req, res) => {
         const person = await pool.query(signinUserQuery, [username]);
         const dbResponse = person.rows[0];
         if (!dbResponse) {
-            errorMessage.error = 'User with this username does not exist';
+            errorMessage.error = 'Пользователь с таким именем не существует';
             return res.status(status.notfound).send(errorMessage);
         }
         if (!comparePassword(dbResponse.password, password)) {
-            errorMessage.error = 'The password you provided is incorrect';
+            errorMessage.error = 'Не верный пароль';
             return res.status(status.bad).send(errorMessage);
         }
         const token = generateUserToken(dbResponse.id, dbResponse.username, dbResponse.email);

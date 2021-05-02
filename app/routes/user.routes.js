@@ -1,5 +1,4 @@
 const controller = require("../controllers/user.controller.js");
-const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -10,11 +9,7 @@ module.exports = (app) => {
         next();
     });
 
-    app.delete("/api/deleteUser/:id",
-        //[authJwt.verifyToken],
-        controller.deleteUser);
+    app.delete("/api/deleteUser/:id", controller.deleteUser);
 
-    app.get("/api/users",
-        //[authJwt.verifyToken],
-        controller.paginatedUsers);
+    app.get("/api/users", controller.paginatedUsers);
 };

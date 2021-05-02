@@ -1,5 +1,6 @@
 const controller = require("../controllers/reasonForReturn.controller.js");
 const verifyTypeOfProperty = require("../middlewares/verifyReasonForReturn");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -10,27 +11,15 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getReasonForReturn",
-        //[authJwt.verifyToken],
-        controller.getReasonForReturn);
+    app.get("/api/getReasonForReturn", [authJwt.verifyToken], controller.getReasonForReturn);
 
-    app.get("/api/getCurrentReasonForReturn/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentReasonForReturn);
+    app.get("/api/getCurrentReasonForReturn/:id", [authJwt.verifyToken], controller.getCurrentReasonForReturn);
 
-    app.get("/api/deleteReasonForReturnInfo/:id",
-        //[authJwt.verifyToken],
-        controller.getDeleteReasonForReturnInfo);
+    app.get("/api/deleteReasonForReturnInfo/:id", [authJwt.verifyToken], controller.getDeleteReasonForReturnInfo);
 
-    app.delete("/api/deleteReasonForReturn/:id",
-        //[authJwt.verifyToken],
-        controller.deleteReasonForReturn);
+    app.delete("/api/deleteReasonForReturn/:id", [authJwt.verifyToken], controller.deleteReasonForReturn);
 
-    app.post("/api/createReasonForReturn",
-        [verifyTypeOfProperty.checkDuplicateReasonForReturn],
-        controller.createNewReasonForReturn);
+    app.post("/api/createReasonForReturn", [authJwt.verifyToken, verifyTypeOfProperty.checkDuplicateReasonForReturn], controller.createNewReasonForReturn);
 
-    app.put("/api/updateReasonForReturn/:id",
-        [verifyTypeOfProperty.checkDuplicateReasonForReturnOnUpdate],
-        controller.updateReasonForReturn);
+    app.put("/api/updateReasonForReturn/:id", [authJwt.verifyToken, verifyTypeOfProperty.checkDuplicateReasonForReturnOnUpdate], controller.updateReasonForReturn);
 };

@@ -1,4 +1,5 @@
 const controller = require("../controllers/pharmacy.controller.js");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -9,35 +10,19 @@ module.exports = (app) => {
         next();
     });
 
-    app.get("/api/getAllPharmacy",
-        //[authJwt.verifyToken],
-        controller.getAllPharmacy);
+    app.get("/api/getAllPharmacy", [authJwt.verifyToken], controller.getAllPharmacy);
 
-    app.get("/api/getPharmacy",
-        //[authJwt.verifyToken],
-        controller.getPharmacy);
+    app.get("/api/getPharmacy", [authJwt.verifyToken], controller.getPharmacy);
 
-    app.get("/api/getCurrentPharmacy/:id",
-        //[authJwt.verifyToken],
-        controller.getCurrentPharmacy);
+    app.get("/api/getCurrentPharmacy/:id", [authJwt.verifyToken], controller.getCurrentPharmacy);
 
-    app.get("/api/deletePharmacyInfo/:id",
-        //[authJwt.verifyToken],
-        controller.getDeletePharmacyInfo);
+    app.get("/api/deletePharmacyInfo/:id", [authJwt.verifyToken], controller.getDeletePharmacyInfo);
 
-    app.delete("/api/deletePharmacy/:id",
-        //[authJwt.verifyToken],
-        controller.deletePharmacy);
+    app.delete("/api/deletePharmacy/:id", [authJwt.verifyToken], controller.deletePharmacy);
 
-    app.delete("/api/deleteGroupOfPharmacy",
-        //[authJwt.verifyToken],
-        controller.deleteGroupOfPharmacy);
+    app.delete("/api/deleteGroupOfPharmacy", [authJwt.verifyToken], controller.deleteGroupOfPharmacy);
 
-    app.post("/api/createPharmacy",
-        //[authJwt.verifyToken],
-        controller.createNewPharmacy);
+    app.post("/api/createPharmacy", [authJwt.verifyToken], controller.createNewPharmacy);
 
-    app.put("/api/updatePharmacy/:id",
-        //[authJwt.verifyToken],
-        controller.updatePharmacy);
+    app.put("/api/updatePharmacy/:id", [authJwt.verifyToken], controller.updatePharmacy);
 };

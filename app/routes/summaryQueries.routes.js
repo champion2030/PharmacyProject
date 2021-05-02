@@ -1,4 +1,5 @@
 const controller = require("../controllers/summaryQueries.controller.js");
+const authJwt = require("../middlewares/authJwt");
 
 module.exports = (app) => {
     app.use((req, res, next) => {
@@ -9,15 +10,9 @@ module.exports = (app) => {
         next();
     });
 
-    app.post("/api/queryWithDataCondition",
-        //[authJwt.verifyToken],
-        controller.queryWithDataCondition);
+    app.post("/api/queryWithDataCondition", [authJwt.verifyToken], controller.queryWithDataCondition);
 
-    app.get("/api/queryWithConditionForGroups",
-        //[authJwt.verifyToken],
-        controller.queryWithConditionForGroups);
+    app.get("/api/queryWithConditionForGroups", [authJwt.verifyToken], controller.queryWithConditionForGroups);
 
-    app.post("/api/finalQueryWithDataAndGroup",
-        //[authJwt.verifyToken],
-        controller.getFinalQueryWithDataAndGroups);
+    app.post("/api/finalQueryWithDataAndGroup", [authJwt.verifyToken], controller.getFinalQueryWithDataAndGroups);
 };
