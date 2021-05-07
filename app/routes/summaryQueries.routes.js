@@ -12,7 +12,9 @@ module.exports = (app) => {
 
     app.post("/api/queryWithDataCondition", [authJwt.verifyToken], controller.queryWithDataCondition);
 
-    app.get("/api/queryWithConditionForGroups", [authJwt.verifyToken], controller.queryWithConditionForGroups);
+    app.post("/api/queryWithConditionForGroups", [authJwt.verifyToken], controller.queryWithConditionForGroups);
 
     app.post("/api/finalQueryWithDataAndGroup", [authJwt.verifyToken], controller.getFinalQueryWithDataAndGroups);
+
+    app.get("/api/finalRequestWithoutCondition", [authJwt.verifyToken], controller.getFinalRequestWithoutCondition);
 };

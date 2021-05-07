@@ -28,26 +28,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All done, maybe something will be added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/auth.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/dev/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/dev/tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/validations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/middlewares/verifySignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/middlewares/verifySignUp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/area.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/area.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/countryOfManufacrute.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/deliveries.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/deliveries.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/employee.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/employee.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/formOfIssue.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/manufacturerFirm.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/medicine.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/medicine.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacologicalGroup.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacy.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/pharmacyName.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/reasonForReturn.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/requests.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/requests.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/summaryQueries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/summaryQueries.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/summaryQueries.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/summaryQueries.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/typeOfProperty.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/user.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/user.routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -247,7 +229,10 @@
       <workItem from="1619801080329" duration="3646000" />
       <workItem from="1619866104107" duration="1448000" />
       <workItem from="1619889417812" duration="12392000" />
-      <workItem from="1619946599589" duration="3690000" />
+      <workItem from="1619946599589" duration="3829000" />
+      <workItem from="1620068170124" duration="64000" />
+      <workItem from="1620143156878" duration="1230000" />
+      <workItem from="1620410043616" duration="4952000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -550,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619874265689</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="All done, maybe something will be added">
+      <created>1619955917822</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1619955917822</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
