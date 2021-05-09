@@ -205,13 +205,47 @@ ant.cnt > (select avg(cnm) from (select count(*) as cnm, manufacture_firm_id fro
     }
 }
 
+const getDiagram = async (req, res) => {
+    let labels = [], data = []
+    const Query = `Select area.name_of_area as label, count(pharmacy.id) as value
+    from pharmacy
+    right join area on area.id = pharmacy.area_id
+    group by area.name_of_area, area.id
+    order by area.id desc`;
+    try {
+        let requestResult = await pool.query(Query)
+        for (let i = 0; i < requestResult.rows.length; i++) labels.push(requestResult.rows[i].label)
+        for (let i = 0; i < requestResult.rows.length; i++) data.push(parseInt(requestResult.rows[i].value))
+        return res.json({
+            requestResult: requestResult.rows,
+            result: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'Районы',
+                        backgroundColor: 'rgba(75,192,192,1)',
+                        borderColor: 'rgba(0,0,0,1)',
+                        borderWidth: 2,
+                        data: data
+                    }
+                ]
+            }
+        })
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 const summaryQueriesMethods = {
     queryWithDataCondition,
     queryWithConditionForGroups,
     getFinalQueryWithDataAndGroups,
     getFinalRequestWithoutCondition,
     getQueryOnWrapUpQuery,
-    getFinalQueryWithSubquery
+    getFinalQueryWithSubquery,
+    getDiagram
 }
 
 module.exports = summaryQueriesMethods
