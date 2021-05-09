@@ -17,4 +17,9 @@ module.exports = (app) => {
     app.post("/api/finalQueryWithDataAndGroup", [authJwt.verifyToken], controller.getFinalQueryWithDataAndGroups);
 
     app.get("/api/finalRequestWithoutCondition", [authJwt.verifyToken], controller.getFinalRequestWithoutCondition);
+
+    app.post("/api/queryOnWrapUpQuery", [authJwt.verifyToken], controller.getQueryOnWrapUpQuery)
+
+    app.get("/api/finalQueryWithSubquery", [authJwt.verifyToken], controller.getFinalQueryWithSubquery)
+
 };

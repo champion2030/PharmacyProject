@@ -145,11 +145,73 @@ order by count(*) desc) as i`)
     }
 }
 
+const getQueryOnWrapUpQuery = async (req, res) => {
+    let {pharmacyId} = req.body;
+    if (pharmacyId === '') pharmacyId = 0
+    const Query = `SELECT deliveries.id, medicine.medicine_name, form_of_issue.form_of_issue, pharmacological_group.pharmacological_group, manufacturer_firm.firm_name, deliveries.supplier_price
+    FROM deliveries
+    JOIN medicine ON deliveries.medicine_id = medicine.id 
+    JOIN form_of_issue ON medicine.form_of_issue_id = form_of_issue.id 
+    JOIN pharmacological_group ON medicine.pharmacological_group_id = pharmacological_group.id 
+    JOIN manufacturer_firm ON medicine.manufacture_firm_id = manufacturer_firm.id
+    JOIN employee ON deliveries.employee_id = employee.id 
+    JOIN pharmacy ON employee.pharmacy_id = pharmacy.id 
+    where pharmacy.id = $1 
+    order by deliveries.supplier_price desc 
+    limit 1`;
+    try {
+        let requestResult = await pool.query(Query, [pharmacyId])
+        return res.json(requestResult.rows[0])
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
+const getFinalQueryWithSubquery = async (req, res) => {
+    const {page = 1, limit = 5} = req.query;
+    const Query = `select * from (select count(*) as cnt, 
+(SELECT country_of_manufacture.country FROM manufacturer_firm JOIN country_of_manufacture ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id 
+ WHERE manufacturer_firm.id = me.manufacture_firm_id) as country_of_manufacture, mf.firm_name, mf.email, mf.address, mf.year_open from medicine me 
+join manufacturer_firm mf on mf.id = me.manufacture_firm_id 
+group by manufacture_firm_id, mf.id
+order by cnt desc
+limit $1 offset $2
+) ant
+where 
+ant.cnt > (select avg(cnm) from (select count(*) as cnm, manufacture_firm_id from medicine group by manufacture_firm_id) as d)`;
+    try {
+        let requestResult = await pool.query(Query, [limit, (page - 1) * limit])
+        const count = await pool.query(`select count(*) from (select * from (select count(*) as cnt, 
+(SELECT country_of_manufacture.country FROM manufacturer_firm JOIN country_of_manufacture ON manufacturer_firm.country_of_manufacture_id = country_of_manufacture.id 
+ WHERE manufacturer_firm.id = me.manufacture_firm_id) as country_of_manufacture, mf.firm_name, mf.email, mf.address, mf.year_open from medicine me 
+join manufacturer_firm mf on mf.id = me.manufacture_firm_id 
+group by manufacture_firm_id, mf.id
+order by cnt desc
+) ant
+where 
+ant.cnt > (select avg(cnm) from (select count(*) as cnm, manufacture_firm_id from medicine group by manufacture_firm_id) as d)) as i`)
+        return res.json({
+            requestResult: requestResult.rows,
+            totalPages: Math.ceil(count.rows[0].count / limit),
+            currentPage: page,
+            totalCount: parseInt(count.rows[0].count)
+        })
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 const summaryQueriesMethods = {
     queryWithDataCondition,
     queryWithConditionForGroups,
     getFinalQueryWithDataAndGroups,
-    getFinalRequestWithoutCondition
+    getFinalRequestWithoutCondition,
+    getQueryOnWrapUpQuery,
+    getFinalQueryWithSubquery
 }
 
 module.exports = summaryQueriesMethods
