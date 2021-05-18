@@ -238,6 +238,41 @@ const getDiagram = async (req, res) => {
     }
 }
 
+const get3DDiagram = async (req, res) => {
+    let dataset = []
+    const category = await pool.query(`SELECT name_of_area as label FROM area order by id`)
+    const types_of_property = await pool.query(`SELECT name_of_property FROM type_of_property order by id`)
+    const pharmacy_count = await pool.query(`Select count(pharmacy.id)
+from pharmacy
+right join type_of_property on type_of_property.id = pharmacy.type_of_property_id
+right join area on area.id = pharmacy.area_id
+group by type_of_property.name_of_property, area.name_of_area, area.id, type_of_property.id
+order by area.id, type_of_property.id`);
+    for (let i = 0; i < types_of_property.rows.length; i++) {
+        let data = []
+        for (let j = i; j < pharmacy_count.rows.length; j += types_of_property.rows.length) {
+            let temp = {value: pharmacy_count.rows[j].count}
+            data.push(temp)
+        }
+        let jsonObject =
+            {
+                seriesname: types_of_property.rows[i].name_of_property,
+                data: data
+            }
+        dataset.push(jsonObject)
+    }
+    try {
+        return res.json({
+            category: category.rows,
+            dataset: dataset
+        })
+    } catch (error) {
+        console.log(error)
+        errorMessage.error = 'Operation was not successful';
+        return res.status(status.error).send(errorMessage);
+    }
+}
+
 const summaryQueriesMethods = {
     queryWithDataCondition,
     queryWithConditionForGroups,
@@ -245,7 +280,8 @@ const summaryQueriesMethods = {
     getFinalRequestWithoutCondition,
     getQueryOnWrapUpQuery,
     getFinalQueryWithSubquery,
-    getDiagram
+    getDiagram,
+    get3DDiagram
 }
 
 module.exports = summaryQueriesMethods

@@ -22,9 +22,9 @@ module.exports = (app) => {
 
     app.get("/api/finalQueryWithSubquery", [authJwt.verifyToken], controller.getFinalQueryWithSubquery)
 
-    app.get("/api/diagram",
-        //[authJwt.verifyToken],
-     controller.getDiagram)
+    app.get("/api/diagram", [authJwt.verifyToken], controller.getDiagram)
+
+    app.get("/api/get3DDiagram", [authJwt.verifyToken], controller.get3DDiagram)
 
 
 };

@@ -63,7 +63,7 @@ from pharmacy
 right join type_of_property on type_of_property.id = pharmacy.type_of_property_id
 right join area on area.id = pharmacy.area_id
 group by type_of_property.name_of_property, area.name_of_area, area.id
-order by area.id desc LIMIT $1 OFFSET $2`;
+order by area.id LIMIT $1 OFFSET $2`;
     try {
         let requestResult = await pool.query(Query, [limit, (page - 1) * limit]);
         let count = await pool.query(`select count(*) from (Select count(pharmacy.id), type_of_property.name_of_property, area.name_of_area
