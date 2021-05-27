@@ -26,11 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All done, maybe something will be added">
+    <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All done and diagrams added">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/requests.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/requests.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/summaryQueries.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/summaryQueries.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/summaryQueries.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/summaryQueries.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="15.5.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.37" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pharmacy-front" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
@@ -79,6 +78,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db" />
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\medicine" />
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\dev" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
@@ -245,7 +245,14 @@
       <workItem from="1621250376950" duration="1034000" />
       <workItem from="1621278176865" duration="52000" />
       <workItem from="1621280743957" duration="766000" />
-      <workItem from="1621333656968" duration="13516000" />
+      <workItem from="1621333656968" duration="14395000" />
+      <workItem from="1621458751722" duration="759000" />
+      <workItem from="1621518669038" duration="1796000" />
+      <workItem from="1621605443405" duration="1192000" />
+      <workItem from="1621778710228" duration="8294000" />
+      <workItem from="1621843160404" duration="2072000" />
+      <workItem from="1621864328362" duration="2121000" />
+      <workItem from="1621944491362" duration="1604000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -576,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620599487591</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="All done and diagrams added">
+      <created>1621357375443</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1621357375443</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,6 +643,7 @@
     <MESSAGE value="All done" />
     <MESSAGE value="Requests added" />
     <MESSAGE value="All done, maybe something will be added" />
-    <option name="LAST_COMMIT_MESSAGE" value="All done, maybe something will be added" />
+    <MESSAGE value="All done and diagrams added" />
+    <option name="LAST_COMMIT_MESSAGE" value="All done and diagrams added" />
   </component>
 </project>

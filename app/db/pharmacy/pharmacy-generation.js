@@ -34,7 +34,8 @@ exports.generatePharmacy = async (numberOfPharmacy) => {
                 telephone,
                 address
             ]
-            await pool.query(Query, values)
+            let temp = await pool.query(Query, values)
+            console.log(temp.rows[0])
         }
         console.log("pharmacy generated")
         await employeeGeneration(numberOfPharmacy * 2 + numberOfPharmacy, numberOfPharmacy)
