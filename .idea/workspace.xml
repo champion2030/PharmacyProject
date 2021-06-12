@@ -27,9 +27,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08c6b948-1459-4acd-bdc7-5454864d21ec" name="Default Changelist" comment="All done and diagrams added">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/pharmacy/pharmacy-generation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy" />
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db" />
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\medicine" />
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\dev" />
       <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy" />
-      <recent name="D:\Второй курс\Четвёртый семестр\БД\Pharmacy\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Универ\Второй курс\Четвёртый семестр\БД\Pharmacy\app\db\requests" />
@@ -253,6 +252,12 @@
       <workItem from="1621843160404" duration="2072000" />
       <workItem from="1621864328362" duration="2121000" />
       <workItem from="1621944491362" duration="1604000" />
+      <workItem from="1622144474863" duration="446000" />
+      <workItem from="1622366895794" duration="5000" />
+      <workItem from="1622373180435" duration="659000" />
+      <workItem from="1623234615156" duration="1038000" />
+      <workItem from="1623422047964" duration="1545000" />
+      <workItem from="1623505072979" duration="1925000" />
     </task>
     <task id="LOCAL-00001" summary="Learning">
       <created>1613848930034</created>
@@ -590,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621357375443</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="All done and diagrams added">
+      <created>1622144906799</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1622144906799</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
